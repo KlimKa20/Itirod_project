@@ -7,19 +7,29 @@
 </head>
 <body>
 <header>
-    <div class="logo">
-        <img src="../image/logo.png" alt="logo">
+    <div class="left_header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox"/>
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="index.html">Catalog</a></li>
+                <li><a class="menu__item" href="сreate.html">Create</a></li>
+                <li><a class="menu__item" href="log.html">Log In</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img src="../image/wine-splash.jpg" alt="logo">
+            <h1>Cocktail database</h1>
+        </div>
     </div>
-    <h1>Cocktail database</h1>
-    <form>
-        <input type="text" placeholder="Search">
-        <button type="button">P</button>
-    </form>
-    <nav>
-        <a href="index.html">Catalog</a>
-        <a href="index.html">Create</a>
-        <a href="index.html">Log</a>
-    </nav>
+    <div>
+        <form class="Search_form">
+            <input type="text" placeholder="Search">
+            <button type="button">&#128269</button>
+        </form>
+    </div>
 </header>
 <main>
     <div>
@@ -56,12 +66,14 @@
     </div>
 </main>
 <footer>
-    <p>@ Copyright K.A.</p>
-    <h3>Contact us</h3>
-    <div>
-        <a href="https://vk.com/id191274652" >VK</a>
-        <a href="https://vk.com/id191274652" >Facebook</a>
-        <a href="https://vk.com/id191274652" >Instagram</a>
+    <p class="copyright">@ Copyright K.A.</p>
+    <div class="contacts">
+        <h3>Contact us</h3>
+        <div>
+            <a class="vk_block" href="https://vk.com/id191274652"></a>
+            <a class="facebook_block" href="https://vk.com/id191274652"></a>
+            <a class="instagram_block" href="https://vk.com/id191274652"></a>
+        </div>
     </div>
 </footer>
 </body>

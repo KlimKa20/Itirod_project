@@ -1,0 +1,51 @@
+.sort-selection ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+    background: #819A32;
+    height: 50px;
+}
+
+.sort-selection a {
+    text-decoration: none;
+    background: #819A32;
+    color: #fff;
+    padding: 0 15px;
+    font-family: arial, serif;
+    line-height: 50px;
+    display: block;
+    border-right: 1px solid #677B27;
+    -moz-transition: all 0.3s 0.01s ease;
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+
+.sort-selection a:hover {
+    background: #D43737;
+}
+
+.sort-selection li {
+    float: right;
+    position: relative;
+}
+
+.sort-selection li:last-child {
+    float: right;
+}
+
+/*Стили для скрытого выпадающего меню*/
+.sort-selection li > ul {
+    position: absolute;
+    top: 25px;
+    display: none;
+}
+
+/*Делаем скрытую часть видимой*/
+.sort-selection li:hover > ul {
+    display: block;
+    width: 250px;
+}
+
+.sort-selection li:hover > ul > li {
+    float: none;
+}
