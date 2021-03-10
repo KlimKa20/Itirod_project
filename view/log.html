@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="../styles/reg.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -32,26 +33,30 @@
     </div>
 </header>
 <main>
-    <section>
-        <img>
-        <div>
-            <div>
-                <a href="#">Join</a>
-                <h2>| LogIn</h2>
+    <section class="baseContainer">
+        <div class="imgContainer">
+            <img src="../image/2644029898.jpg" alt="Фото пикника">
+        </div>
+        <div class="inputContainer">
+            <div class="text_header_form">
+                <h2>
+                    <span>LogIn</span>
+                    |
+                    <a href="../view/reg.html">Join</a>
+                </h2>
             </div>
-            <div>
-                <form>
-                    <input type="text" placeholder="Type your email">
-                    <button type="button">Login</button>
-                </form>
+            <form class="identification_form">
+                <input type="text" placeholder="Type your email">
+                <input type="password" placeholder="Type your password">
+                <button type="button">Login</button>
+            </form>
+            <div class="container">
+                <button type="button" class="other_enter button_google" href="#">Continue with Google</button>
+                <button type="button" class="other_enter button_facebook" href="#">Continue with Facebook</button>
             </div>
-            <div>
-                <a href="#">Google</a>
-                <a href="#">Facebook</a>
-            </div>
-            <div>
+            <div class="text_footer_form">
                 <span>Don't have a profile?</span>
-                <a href="#">Join</a>
+                <a href="../view/reg.html">Join</a>
             </div>
         </div>
     </section>

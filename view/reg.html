@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/reg.css"/>
     <meta charset="UTF-8">
     <title>Registration</title>
 </head>
@@ -32,28 +33,31 @@
     </div>
 </header>
 <main>
-    <section>
-        <img>
-        <div>
-            <div>
-                <h2>Join |</h2>
-                <a href="#">LogIn</a>
+    <section class="baseContainer">
+        <div class="imgContainer">
+            <img src="../image/2644029898.jpg" alt="Фото пикника">
+        </div>
+        <div class="inputContainer">
+            <div class="text_header_form">
+                <h2>
+                    <span>Join</span>
+                    |
+                    <a href="../view/log.html">LogIn</a>
+                </h2>
             </div>
-            <div>
-                <form>
-                    <input type="text" placeholder="Type your email">
-                    <input type="password" placeholder="Type your password">
-                    <input type="password" placeholder="Type your password again">
-                    <button type="button">Join</button>
-                </form>
+            <form class="identification_form">
+                <input type="text" placeholder="Type your email">
+                <input type="password" placeholder="Type your password">
+                <input type="password" placeholder="Repeat your password">
+                <button type="button">Join</button>
+            </form>
+            <div class="container">
+                <button type="button" class="other_enter button_google" href="#">Continue with Google</button>
+                <button type="button" class="other_enter button_facebook" href="#">Continue with Facebook</button>
             </div>
-            <div>
-                <a href="#">Google</a>
-                <a href="#">Facebook</a>
-            </div>
-            <div>
+            <div class="text_footer_form">
                 <span>Already have a profile?</span>
-                <a href="#">LogIn</a>
+                <a href="../view/log.html">LogIn</a>
             </div>
         </div>
     </section>
