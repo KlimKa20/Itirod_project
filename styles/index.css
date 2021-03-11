@@ -57,7 +57,7 @@
 
 .ensuing_consequences img {
     width: 100%;
-    max-height: 250px;
+    height: 100%;
 }
 
 .ensuing_consequences figcaption {
@@ -68,12 +68,14 @@
     background-color: #fafafa;
     position: absolute;
     bottom: 50%;
-    right: 35%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     line-height: 30px;
 }
 
 .ensuing_consequences {
+    height: 250px;
     position: relative;
 }
 
@@ -86,12 +88,13 @@
 }
 
 .grid_container > a{
+    text-decoration: none;
+    color: black;
     margin: 10px;
     min-width: 200px;
     border-radius: 10px;
     height: 300px;
     background-color: #cac6c6;
-    border: 1px solid saddlebrown;
     text-align: center;
     font-size: 30px;
 }

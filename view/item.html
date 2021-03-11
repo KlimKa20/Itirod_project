@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/item.css"/>
     <meta charset="UTF-8">
     <title>Item</title>
 </head>
@@ -32,52 +33,64 @@
     </div>
 </header>
 <main>
-    <article>
-        <div>
+    <article class="baseContainer">
+        <div class="imgContainer">
             <figure>
-                <img>
-                <figcaption>nmae</figcaption>
+                <img src="../image/square_PNG60.png">
+                <figcaption>Name</figcaption>
             </figure>
-            <div class="star_rating">
-                star
+            <div class="rating-area">
+                <input type="radio" id="star-5" name="rating" value="5">
+                <label for="star-5" title="Оценка «5»"></label>
+                <input type="radio" id="star-4" name="rating" value="4">
+                <label for="star-4" title="Оценка «4»"></label>
+                <input type="radio" id="star-3" name="rating" value="3">
+                <label for="star-3" title="Оценка «3»"></label>
+                <input type="radio" id="star-2" name="rating" value="2">
+                <label for="star-2" title="Оценка «2»"></label>
+                <input type="radio" id="star-1" name="rating" value="1">
+                <label for="star-1" title="Оценка «1»"></label>
             </div>
         </div>
-        <div>
-            <p>recipe</p>
-            <ul>
+        <div class="outputContainer">
+<!--            <p class="field_style creator" style="background-color: #D43737">Ingredient</p>-->
+            <ul class="list_of_ingredient">
                 <li>
-                    <span>Milk</span>
-                    <span>3%</span>
+                    <span class="ingredient">Milk</span>
+                    <span class="precent">3%</span>
+                </li>
+                <li>
+                    <span class="ingredient">Water</span>
+                    <span class="precent">3%</span>
                 </li>
             </ul>
-            <div>
-                <p>
+            <div class="creator">
+                <p class="field_style" style="background-color: #D43737">
                     Created by
                     <span> aaa</span>
                 </p>
             </div>
         </div>
     </article>
-    <div>
-        <figure>
-            <img>
-            <figcaption><h2>Dec</h2></figcaption>
-        </figure>
-    </div>
-    <section>
-        <form>
-            <textarea placeholder="Enter your comment">
-
-            </textarea>
+    <figure class="ensuing_consequences">
+        <img src="../image/alcohol.jpg" alt="Пикник">
+        <figcaption>Алкоголь вредит вашему здоровью!</figcaption>
+    </figure>
+    <section class="comments_block">
+        <form class="comment_form">
+            <p>
+                <label><textarea placeholder="Enter your comment"></textarea>
+                </label>
+            </p>
             <button>Create</button>
         </form>
-        <ul>
+        <ul class="list_of_comments">
             <li>
-                <div>
+                <div class="comment_info">
                     <p>aaa@mail.com</p>
                     <time>2021-03-08</time>
                 </div>
-                <p>dgdfgdfg</p>
+                <p class="comment_content">dgdfgdfg</p>
             </li>
         </ul>
     </section>

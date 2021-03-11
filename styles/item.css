@@ -1,0 +1,182 @@
+.baseContainer {
+    padding-top: 95px;
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.imgContainer {
+    height: 100%;
+    width: 30%;
+}
+
+.imgContainer figure {
+    height: 80%;
+}
+
+.imgContainer img {
+    height: 80%;
+    width: auto;
+}
+
+.outputContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.field_style {
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #B3B3B3;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
+}
+
+.rating-area {
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.rating-area:not(:checked) > input {
+    display: none;
+}
+
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+
+.rating-area > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area > label:active {
+    position: relative;
+}
+
+.ensuing_consequences img {
+    width: 100%;
+    height: 100%;
+}
+
+.ensuing_consequences figcaption {
+    width: 300px;
+    height: 30px;
+    color: #D43737;
+    border-radius: 10px;
+    background-color: #fafafa;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 30px;
+}
+
+.ensuing_consequences {
+    height: 250px;
+    position: relative;
+}
+
+.list_of_ingredient {
+    height: 60%;
+    padding-left: 0;
+    list-style: none;
+}
+
+.list_of_ingredient li {
+    margin: 10px auto;
+}
+
+.ingredient {
+    margin-right: 20px;
+}
+
+.precent {
+
+}
+
+.creator {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.comments_block {
+    margin: 10px auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.comment_form textarea {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.comment_form button {
+    padding: 5px;
+    margin: 10px auto;
+    border: 1px solid #B3B3B3;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
+    width: 90%;
+    color: white;
+    background-color: #D43737;
+}
+
+.list_of_comments {
+    padding-left: 0;
+}
+
+.list_of_comments li {
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    border-radius: 10px;
+    width: 90%;
+    border: 1px solid #B3B3B3;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
+    color: black;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.comment_info {
+    width: 35%;
+}
+
+.comment_content {
+    width: 65%;
+}
