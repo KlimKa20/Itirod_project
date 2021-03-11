@@ -1,0 +1,71 @@
+.baseContainer {
+    padding-top: 95px;
+    display: flex;
+    min-height: 500px;
+    justify-content: center;
+    text-align: center;
+}
+.imgContainer{
+    width: 30%;
+}
+.imgContainer img{
+    height: auto;
+    width: 100%;
+}
+.inputContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#name_field {
+    margin:10px auto;
+    width: 40%;
+}
+
+.select_block ul{
+    list-style: none;
+    margin-bottom: 5px;
+}
+.select_block button{
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 50%;
+    background-color: #D43737;
+    box-shadow: 0 4px 16px #e0dede;
+}
+
+.item_parameter select{
+    width: 20%;
+
+}
+.item_parameter input{
+    width: 30%;
+    margin-right: 7%;
+}
+
+.inputContainer textarea{
+    margin:10px auto;
+    width: 70%;
+}
+
+#create_button {
+    width: 70%;
+    background-color: #D43737;
+}
+
+.field_style {
+    margin:0 auto;
+    padding:5px;
+    border: 1px solid #B3B3B3;
+    border-radius:10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.03);
+}
+
+#new_li {
+    margin-left: 40%;
+}

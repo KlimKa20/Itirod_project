@@ -4,6 +4,7 @@
 }
 
 header {
+    z-index: 1;
     position: fixed;
     width: 100%;
     background-color: #e2323f;
