@@ -26,74 +26,69 @@
         </div>
     </div>
     <div>
-        <form class="Search_form">
+        <form class="search_form">
             <input type="text" placeholder="Search">
             <button type="button">&#128269</button>
         </form>
     </div>
 </header>
 <main>
-    <article class="baseContainer">
-        <div class="imgContainer">
-            <figure>
-                <img src="../image/square_PNG60.png">
-                <figcaption>Name</figcaption>
-            </figure>
-            <div class="rating-area">
-                <input type="radio" id="star-5" name="rating" value="5">
-                <label for="star-5" title="Оценка «5»"></label>
-                <input type="radio" id="star-4" name="rating" value="4">
-                <label for="star-4" title="Оценка «4»"></label>
-                <input type="radio" id="star-3" name="rating" value="3">
-                <label for="star-3" title="Оценка «3»"></label>
-                <input type="radio" id="star-2" name="rating" value="2">
-                <label for="star-2" title="Оценка «2»"></label>
-                <input type="radio" id="star-1" name="rating" value="1">
-                <label for="star-1" title="Оценка «1»"></label>
+    <div class="Container">
+        <article class="baseContainer">
+            <div class="imgContainer">
+                <figure>
+                    <figcaption>Name</figcaption>
+                    <img src="../image/empty-cup.png">
+                </figure>
+                <div class="rating-area">
+                    <input type="radio" id="star-5" name="rating" value="5">
+                    <label for="star-5" title="Оценка «5»"></label>
+                    <input type="radio" id="star-4" name="rating" value="4">
+                    <label for="star-4" title="Оценка «4»"></label>
+                    <input type="radio" id="star-3" name="rating" value="3">
+                    <label for="star-3" title="Оценка «3»"></label>
+                    <input type="radio" id="star-2" name="rating" value="2">
+                    <label for="star-2" title="Оценка «2»"></label>
+                    <input type="radio" id="star-1" name="rating" value="1">
+                    <label for="star-1" title="Оценка «1»"></label>
+                </div>
             </div>
-        </div>
-        <div class="outputContainer">
-<!--            <p class="field_style creator" style="background-color: #D43737">Ingredient</p>-->
-            <ul class="list_of_ingredient">
+            <div class="outputContainer">
+                <ul class="list_of_ingredient">
+                    <li>
+                        <span class="ingredient">Milk:</span>
+                        <span class="precent">3%</span>
+                    </li>
+                    <li>
+                        <span class="ingredient">Water:</span>
+                        <span class="precent">3%</span>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <figure class="ensuing_consequences">
+            <img src="../image/alcohol.jpg" alt="Пикник">
+            <figcaption>Алкоголь вредит вашему здоровью!</figcaption>
+        </figure>
+        <section class="comments_block">
+            <form class="comment_form">
+                <p>
+                    <label><textarea placeholder="Enter your comment"></textarea>
+                    </label>
+                </p>
+                <button>Create</button>
+            </form>
+            <ul class="list_of_comments">
                 <li>
-                    <span class="ingredient">Milk</span>
-                    <span class="precent">3%</span>
-                </li>
-                <li>
-                    <span class="ingredient">Water</span>
-                    <span class="precent">3%</span>
+                    <div class="comment_info">
+                        <p>aaa@mail.com</p>
+                        <time>2021-03-08</time>
+                    </div>
+                    <p class="comment_content">dgdfgdfg</p>
                 </li>
             </ul>
-            <div class="creator">
-                <p class="field_style" style="background-color: #D43737">
-                    Created by
-                    <span> aaa</span>
-                </p>
-            </div>
-        </div>
-    </article>
-    <figure class="ensuing_consequences">
-        <img src="../image/alcohol.jpg" alt="Пикник">
-        <figcaption>Алкоголь вредит вашему здоровью!</figcaption>
-    </figure>
-    <section class="comments_block">
-        <form class="comment_form">
-            <p>
-                <label><textarea placeholder="Enter your comment"></textarea>
-                </label>
-            </p>
-            <button>Create</button>
-        </form>
-        <ul class="list_of_comments">
-            <li>
-                <div class="comment_info">
-                    <p>aaa@mail.com</p>
-                    <time>2021-03-08</time>
-                </div>
-                <p class="comment_content">dgdfgdfg</p>
-            </li>
-        </ul>
-    </section>
+        </section>
+    </div>
 </main>
 <footer>
     <p class="copyright">@ Copyright K.A.</p>

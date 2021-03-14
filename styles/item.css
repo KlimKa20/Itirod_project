@@ -1,28 +1,31 @@
 .baseContainer {
     padding-top: 95px;
     display: flex;
-    height: 400px;
+    height: 30vh;
+    min-height: 500px;
     justify-content: center;
     text-align: center;
 }
 
 
 .imgContainer {
-    height: 100%;
-    width: 30%;
+    height: 10vh;
+    min-height: 250px;
 }
 
 .imgContainer figure {
     height: 80%;
+    margin-top: 40px;
 }
 
 .imgContainer img {
-    height: 80%;
-    width: auto;
+    margin-left: 40px;
+    height: auto;
+    width: 60%;
 }
 
 .outputContainer {
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,29 +40,59 @@
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
 }
 
+.imgContainer figcaption {
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
 .rating-area {
     overflow: hidden;
     width: 60%;
-    margin: 0 auto;
+    margin: 80px auto;
 }
 
 .rating-area:not(:checked) > input {
     display: none;
 }
 
+
 .rating-area:not(:checked) > label {
     float: right;
-    width: 42px;
+    width: 20%;
     padding: 0;
     cursor: pointer;
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 150%;
+    line-height: 150%;
     color: lightgrey;
     text-shadow: 1px 1px #bbb;
 }
 
 .rating-area:not(:checked) > label:before {
     content: '★';
+}
+
+.ensuing_consequences img {
+    width: 100%;
+    height: 100%;
+}
+
+.ensuing_consequences figcaption {
+    width: 300px;
+    font-size: 24px;
+    height: 30px;
+    color: white;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 30px;
+}
+
+.ensuing_consequences {
+    height: 400px;
+    position: relative;
 }
 
 .rating-area > input:checked ~ label {
@@ -85,33 +118,15 @@
     position: relative;
 }
 
-.ensuing_consequences img {
-    width: 100%;
-    height: 100%;
-}
-
-.ensuing_consequences figcaption {
-    width: 300px;
-    height: 30px;
-    color: #D43737;
-    border-radius: 10px;
-    background-color: #fafafa;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    line-height: 30px;
-}
-
-.ensuing_consequences {
-    height: 250px;
-    position: relative;
-}
-
 .list_of_ingredient {
-    height: 60%;
-    padding-left: 0;
+    min-height: 200px;
+    width: 300px;
+    margin-left: 100px;
+    border: 1px solid lightgray;
+    text-align: left;
+    border-radius: 20px;
+    font-size: 24px;
+    padding: 20px;
     list-style: none;
 }
 
@@ -123,17 +138,13 @@
     margin-right: 20px;
 }
 
-.precent {
-
-}
-
 .creator {
     width: 40%;
     margin: 0 auto;
 }
 
 .comments_block {
-    margin: 10px auto;
+    margin: 25px auto;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -141,19 +152,29 @@
     text-align: center;
 }
 
+@media (max-device-width: 520px) {
+    .comments_block {
+        margin: 80px auto 120px;
+    }
+}
+
 .comment_form textarea {
+    padding: 10px;
     width: 90%;
+    height: 100px;
     border-radius: 10px;
 }
 
 .comment_form button {
-    padding: 5px;
+    padding: 10px 5px;
     margin: 10px auto;
     border: 1px solid #B3B3B3;
+    border-radius: 5px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
     width: 90%;
     color: white;
     background-color: #D43737;
+    font-size: 16px;
 }
 
 .list_of_comments {
@@ -179,4 +200,8 @@
 
 .comment_content {
     width: 65%;
+}
+
+.container {
+    min-height: calc(100vh - 100px);
 }

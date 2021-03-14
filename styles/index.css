@@ -62,12 +62,12 @@
 
 .ensuing_consequences figcaption {
     width: 300px;
+    font-size: 24px;
     height: 30px;
-    color: #D43737;
+    color: white;
     border-radius: 10px;
-    background-color: #fafafa;
     position: absolute;
-    bottom: 50%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -75,19 +75,19 @@
 }
 
 .ensuing_consequences {
-    height: 250px;
+    height: 400px;
     position: relative;
 }
 
 .grid_container {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 10px;
     padding: 10px;
     width: 100%;
 }
 
-.grid_container > a{
+.grid_container > a {
     text-decoration: none;
     color: black;
     margin: 10px;
@@ -100,11 +100,13 @@
 }
 
 .grid_img {
+    padding-top: 25px;
     margin: 0 auto;
     height: 80%;
 }
 
-.grid_img img{
+.grid_img img {
+    margin-left: 40px;
     width: 60%;
     height: auto;
 }
@@ -135,4 +137,14 @@
 .rating-result > span.active {
     color: gold;
     text-shadow: 1px 1px #c60;
+}
+
+.container {
+    min-height: calc(100vh - 100px);
+}
+
+@media (max-device-width: 700px) {
+    .ensuing_consequences {
+        margin-top: 10vh;
+    }
 }

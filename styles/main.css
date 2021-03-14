@@ -4,10 +4,16 @@
 }
 
 html,body{
-    height: 100%;
+    min-height: 100vh;
+    font-size: 14px;
 }
+
+textarea, input, button{
+    outline: none;
+}
+
 main{
-    height: 96%;
+    min-height:100%;
 }
 header {
     z-index: 1;
@@ -22,26 +28,27 @@ header {
     justify-content: space-between;
 }
 
-.Search_form {
+
+.search_form {
     position: relative;
     width: 15rem;
     margin: 0 auto;
 }
 
-.Search_form input, button {
+.search_form input, button {
     border: none;
     outline: none;
     border-radius: 3px;
 }
 
-.Search_form input {
+.search_form input {
     width: 100%;
     height: 42px;
     background: #F9F0DA;
     padding-left: 15px;
 }
 
-.Search_form button {
+.search_form button {
     height: 26px;
     width: 26px;
     position: absolute;
@@ -201,7 +208,6 @@ footer {
     text-align: center;
 }
 
-
 .vk_block {
     background-image: url(../image/jlNemutg.png);
 }
@@ -213,215 +219,3 @@ footer {
 .instagram_block {
     background-image: url(../image/instagram_PNG9.png);
 }
-
-
-/** {*/
-/*    box-sizing: border-box;*/
-/*    margin: 0;*/
-/*}*/
-
-/*header {*/
-/*    z-index: 1;*/
-/*    position: fixed;*/
-/*    width: 100%;*/
-/*    background-color: #e2323f;*/
-/*    color: white;*/
-/*    padding: 15px 40px;*/
-/*    min-width: 650px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*}*/
-
-/*.Search_form {*/
-/*    position: relative;*/
-/*    width: 15rem;*/
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.Search_form input, button {*/
-/*    border: none;*/
-/*    outline: none;*/
-/*    border-radius: 3px;*/
-/*}*/
-
-/*.Search_form input {*/
-/*    width: 100%;*/
-/*    height: 42px;*/
-/*    background: #F9F0DA;*/
-/*    padding-left: 15px;*/
-/*}*/
-
-/*.Search_form button {*/
-/*    height: 26px;*/
-/*    width: 26px;*/
-/*    position: absolute;*/
-/*    top: 8px;*/
-/*    right: 8px;*/
-/*    background: #F15B42;*/
-/*    cursor: pointer;*/
-/*    border-radius: 50%;*/
-/*    padding: 0 2px 2px 2px;*/
-/*}*/
-
-/*.logo {*/
-/*    margin-left: 15px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.logo h1 {*/
-/*    margin-left: 20px;*/
-/*}*/
-
-/*.logo img {*/
-/*    border-radius: 50%;*/
-/*    width: 65px;*/
-/*    height: 65px;*/
-/*}*/
-
-/*.left_header {*/
-/*    display: flex;*/
-/*}*/
-
-/*#menu__toggle {*/
-/*    opacity: 0;*/
-/*}*/
-
-/*.menu__btn {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    position: fixed;*/
-/*    top: 32px;*/
-/*    left: 20px;*/
-/*    width: 26px;*/
-/*    height: 26px;*/
-/*    cursor: pointer;*/
-/*    z-index: 1;*/
-/*}*/
-
-/*!* добавляем "гамбургер" *!*/
-/*.menu__btn > span,*/
-/*.menu__btn > span::before,*/
-/*.menu__btn > span::after {*/
-/*    display: block;*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 2px;*/
-/*    background-color: #faf6f6;*/
-/*}*/
-
-/*.menu__btn > span::before {*/
-/*    content: '';*/
-/*    top: -8px;*/
-/*}*/
-
-/*.menu__btn > span::after {*/
-/*    content: '';*/
-/*    top: 8px;*/
-/*}*/
-
-/*.menu__btn > span,*/
-/*.menu__btn > span::before,*/
-/*.menu__btn > span::after {*/
-/*    transition-duration: .25s;*/
-/*}*/
-
-/*.menu__box {*/
-/*    transition-duration: .25s;*/
-/*}*/
-
-/*.menu__item {*/
-/*    transition-duration: .25s;*/
-/*}*/
-
-/*.menu__box {*/
-/*    display: block;*/
-/*    position: fixed;*/
-/*    visibility: hidden;*/
-/*    top: 0;*/
-/*    left: -100%;*/
-/*    width: 300px;*/
-/*    height: 100%;*/
-/*    padding: 80px 0;*/
-/*    list-style: none;*/
-/*    text-align: center;*/
-/*    background-color: #ECEFF1;*/
-/*    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);*/
-/*}*/
-
-/*!* элементы меню *!*/
-/*.menu__item {*/
-/*    display: block;*/
-/*    padding: 12px 24px;*/
-/*    color: #333;*/
-/*    font-family: 'Roboto', sans-serif;*/
-/*    font-size: 20px;*/
-/*    font-weight: 600;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.menu__item:hover {*/
-/*    background-color: #CFD8DC;*/
-/*}*/
-
-/*#menu__toggle:checked ~ .menu__btn > span {*/
-/*    transform: rotate(45deg);*/
-/*}*/
-
-/*#menu__toggle:checked ~ .menu__btn > span::before {*/
-/*    top: 0;*/
-/*    transform: rotate(0);*/
-/*}*/
-
-/*#menu__toggle:checked ~ .menu__btn > span::after {*/
-/*    top: 0;*/
-/*    transform: rotate(90deg);*/
-/*}*/
-
-/*#menu__toggle:checked ~ .menu__box {*/
-/*    visibility: visible;*/
-/*    left: 0;*/
-/*}*/
-
-/*footer {*/
-/*    width: 100%;*/
-/*    height: 100px;*/
-/*    background-color: #B3B3B3;*/
-/*    min-width: 650px;*/
-/*    padding: 0 40px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*}*/
-
-/*.contacts a {*/
-/*    color: white;*/
-/*    display: inline-block;*/
-/*    margin-left: 15px;*/
-/*    width: 40px;*/
-/*    height: 40px;*/
-/*    border-radius: 30%;*/
-/*    line-height: 40px;*/
-/*    text-align: center;*/
-/*    background-color: #B3B3B3;*/
-/*    background-size: 100%;*/
-/*}*/
-
-/*.contacts h3 {*/
-/*    text-align: center;*/
-/*}*/
-
-
-/*.vk_block {*/
-/*    background-image: url(../image/jlNemutg.png);*/
-/*}*/
-
-/*.facebook_block {*/
-/*    background-image: url(../image/f_logo_RGB-Blue_1024.png);*/
-/*}*/
-
-/*.instagram_block {*/
-/*    background-image: url(../image/instagram_PNG9.png);*/
-/*}*/
-
