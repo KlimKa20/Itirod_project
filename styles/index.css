@@ -7,26 +7,26 @@
 .sort-selection ul {
     list-style: none;
     padding-left: 0;
-    background: #819A32;
+    background: var(--background-sorter);
     height: 50px;
 }
 
 .sort-selection a {
     text-decoration: none;
-    background: #819A32;
-    color: #fff;
+    background: var(--background-sorter);
+    color: var(--font-color);
     padding: 0 15px;
     font-family: arial, serif;
     line-height: 50px;
     display: block;
-    border-right: 1px solid #677B27;
+    border-right: 1px solid var(--background-sorter);;
     -moz-transition: all 0.3s 0.01s ease;
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
 }
 
 .sort-selection a:hover {
-    background: #D43737;
+    background: var(--background-header-color)
 }
 
 .sort-selection li {
@@ -38,14 +38,13 @@
     float: right;
 }
 
-/*Стили для скрытого выпадающего меню*/
 .sort-selection li > ul {
     position: absolute;
     top: 50px;
+    right: 0;
     display: none;
 }
 
-/*Делаем скрытую часть видимой*/
 .sort-selection li:hover > ul {
     display: block;
     width: 250px;
@@ -55,31 +54,7 @@
     float: none;
 }
 
-.ensuing_consequences img {
-    width: 100%;
-    height: 100%;
-}
-
-.ensuing_consequences figcaption {
-    width: 300px;
-    font-size: 24px;
-    height: 30px;
-    color: white;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    line-height: 30px;
-}
-
-.ensuing_consequences {
-    height: 400px;
-    position: relative;
-}
-
-.grid_container {
+.grid__container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 10px;
@@ -87,25 +62,25 @@
     width: 100%;
 }
 
-.grid_container > a {
+.grid__container > a {
     text-decoration: none;
     color: black;
     margin: 10px;
     min-width: 200px;
     border-radius: 10px;
     height: 300px;
-    background-color: #cac6c6;
+    background-color: var(--background-cocktail);
     text-align: center;
     font-size: 30px;
 }
 
-.grid_img {
+.grid__cocktail-img {
     padding-top: 25px;
     margin: 0 auto;
     height: 80%;
 }
 
-.grid_img img {
+.grid__img {
     margin-left: 40px;
     width: 60%;
     height: auto;
@@ -117,7 +92,7 @@
     height: 12%;
     color: #D43737;
     border-radius: 10px;
-    background-color: #fafafa;
+    background-color: var(--background-main-color);
     display: flex;
 }
 
@@ -139,7 +114,7 @@
     text-shadow: 1px 1px #c60;
 }
 
-.container {
+.other_enter__container {
     min-height: calc(100vh - 100px);
 }
 
@@ -147,4 +122,8 @@
     .ensuing_consequences {
         margin-top: 10vh;
     }
+}
+
+.grid__text {
+    color: var(--font-field);
 }

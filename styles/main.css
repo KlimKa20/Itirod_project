@@ -1,26 +1,56 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    --background-header-color: #e2323f;
+    --font-color: white;
+    --background-main-color: white;
+    --item_shadow: rgba(0, 0, 0, .2);
+    --link-color: rgb(186, 22, 40);
+    --background-field: #ECEFF1;
+    --font-field: black;
+    --border-color: #B3B3B3;
+    --background-cocktail: #cac6c6;
+    --background-footer: #B3B3B3;
+    --background-sorter: #819A32;
 }
 
-html,body{
+@media (prefers-color-scheme: dark) {
+    * {
+        --background-sorter: #3a4810;
+        --item_shadow: rgb(28, 65, 32);
+        --background-header-color: #8a0615;
+        --font-color: white;
+        --background-main-color: #222b1d;
+        --link-color: #e2323f;
+        --background-field: #241f1f;
+        --font-field: white;
+        --border-color: #3b3a3a;
+        --background-cocktail: #483e3e;
+        --background-footer: #474f43;
+    }
+}
+
+html, body {
     min-height: 100vh;
     font-size: 14px;
+    background-color: var(--background-main-color);
 }
 
-textarea, input, button{
+textarea, input, button {
     outline: none;
 }
 
-main{
-    min-height:100%;
+main {
+    background-color: var(--background-main-color);
+    min-height: 100%;
 }
+
 header {
     z-index: 1;
     position: fixed;
     width: 100%;
-    background-color: #e2323f;
-    color: white;
+    background-color: var(--background-header-color);
+    color: var(--font-color);
     padding: 15px 40px;
     min-width: 650px;
     display: flex;
@@ -29,32 +59,32 @@ header {
 }
 
 
-.search_form {
+.search__form {
     position: relative;
     width: 15rem;
     margin: 0 auto;
 }
 
-.search_form input, button {
+.search__input {
     border: none;
     outline: none;
     border-radius: 3px;
-}
-
-.search_form input {
     width: 100%;
     height: 42px;
-    background: #F9F0DA;
+    background: var(--background-field);
     padding-left: 15px;
+    color: var(--font-field);
 }
 
-.search_form button {
+.search__button {
+    border: none;
+    outline: none;
     height: 26px;
     width: 26px;
     position: absolute;
     top: 8px;
     right: 8px;
-    background: #F15B42;
+    background: var(--background-header-color);
     cursor: pointer;
     border-radius: 50%;
     padding: 0 2px 2px 2px;
@@ -66,17 +96,17 @@ header {
     align-items: center;
 }
 
-.logo h1 {
+.logo__text {
     margin-left: 20px;
 }
 
-.logo img {
+.logo__image {
     border-radius: 50%;
     width: 65px;
     height: 65px;
 }
 
-.left_header {
+.main-menu {
     display: flex;
 }
 
@@ -104,7 +134,7 @@ header {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #faf6f6;
+    background-color: var(--font-color);
 }
 
 .menu__btn > span::before {
@@ -142,15 +172,15 @@ header {
     padding: 80px 0;
     list-style: none;
     text-align: center;
-    background-color: #ECEFF1;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    background-color: var(--background-main-color);
+    box-shadow: 1px 0 6px var(--item_shadow);
 }
 
 /* элементы меню */
 .menu__item {
     display: block;
     padding: 12px 24px;
-    color: #333;
+    color: var(--font-field);
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -183,7 +213,7 @@ header {
 footer {
     width: 100%;
     height: 100px;
-    background-color: #B3B3B3;
+    background-color: var(--background-footer);
     min-width: 650px;
     padding: 0 40px;
     display: flex;
@@ -191,8 +221,7 @@ footer {
     justify-content: space-between;
 }
 
-.contacts a {
-    color: white;
+.contacts__link {
     display: inline-block;
     margin-left: 15px;
     width: 40px;
@@ -200,11 +229,12 @@ footer {
     border-radius: 30%;
     line-height: 40px;
     text-align: center;
-    background-color: #B3B3B3;
+    background-color: var(--background-footer);
     background-size: 100%;
 }
 
-.contacts h3 {
+.contacts__text {
+    color: var(--font-field);
     text-align: center;
 }
 
@@ -218,4 +248,8 @@ footer {
 
 .instagram_block {
     background-image: url(../image/instagram_PNG9.png);
+}
+
+.copyright {
+    color: var(--font-field);
 }

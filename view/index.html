@@ -3,13 +3,14 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/shared.css"/>
     <meta charset="UTF-8">
     <title>Cocktail database</title>
 </head>
 <body>
 <header>
-    <div class="left_header">
-        <div class="hamburger-menu">
+    <div class="main-menu">
+        <div class="menu-hamburger">
             <input id="menu__toggle" type="checkbox"/>
             <label class="menu__btn" for="menu__toggle">
                 <span></span>
@@ -21,146 +22,187 @@
             </ul>
         </div>
         <div class="logo">
-            <img src="../image/wine-splash.jpg" alt="logo">
-            <h1>Cocktail database</h1>
+            <img class="logo__image" src="../image/wine-splash.jpg" alt="logo">
+            <h1 class="logo__text">Cocktail database</h1>
         </div>
     </div>
     <div>
-        <form class="search_form">
-            <label>
-                <input type="text" placeholder="Search">
-            </label>
-            <button type="button">&#128269</button>
+        <form class="search__form">
+            <input class="search__input" type="text" placeholder="Search">
+            <button class="search__button" type="button">&#128269</button>
         </form>
     </div>
 </header>
 <main>
-    <div class="container">
-        <div class="sort-selection">
-            <ul>
-                <li class="sort_list">
-                    <a href="#">SORT</a>
-                    <ul>
-                        <li><a href="#">NAME</a></li>
-                        <li><a href="#">RATING</a></li>
-                        <li><a href="#">DATE</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="sort-select" href="#">FILTER</a>
-                    <ul class="sort-list hidden">
-                        <li><a href="#">TOP</a></li>
-                        <li><a href="#">ALL</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <section class="grid_container">
-            <a href="item.html">
-                <div>
-                    <figure class="grid_img">
-                        <img src="../image/empty-cup.png" alt="image_item">
-                        <figcaption>name</figcaption>
-                    </figure>
-                    <div class="rating-result">
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <figure class="grid_img">
-                        <img src="../image/empty-cup.png" alt="image_item">
-                        <figcaption>name</figcaption>
-                    </figure>
-                    <div class="rating-result">
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <figure class="grid_img">
-                        <img src="../image/empty-cup.png" alt="image_item">
-                        <figcaption>name</figcaption>
-                    </figure>
-                    <div class="rating-result">
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <figure class="grid_img">
-                        <img src="../image/empty-cup.png" alt="image_item">
-                        <figcaption>name</figcaption>
-                    </figure>
-                    <div class="rating-result">
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <figure class="grid_img">
-                        <img src="../image/empty-cup.png" alt="image_item">
-                        <figcaption>name</figcaption>
-                    </figure>
-                    <div class="rating-result">
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <figure class="grid_img">
-                        <img src="../image/empty-cup.png" alt="image_item">
-                        <figcaption>name</figcaption>
-                    </figure>
-                    <div class="rating-result">
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </a>
-        </section>
-        <figure class="ensuing_consequences">
-            <img src="../image/alcohol.jpg" alt="Пикник">
-            <figcaption>Алкоголь вредит вашему здоровью!</figcaption>
-        </figure>
+    <div class="sort-selection">
+        <ul>
+            <li>
+                <a href="#">SORT</a>
+                <ul>
+                    <li><a href="#">NAME</a></li>
+                    <li><a href="#">RATING</a></li>
+                    <li><a href="#">DATE</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="sort-select" href="#">FILTER</a>
+                <ul>
+                    <li><a href="#">TOP</a></li>
+                    <li><a href="#">ALL</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
+    <section class="grid__container">
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+        <a href="item.html">
+            <div>
+                <figure class="grid__cocktail-img">
+                    <img class="grid__img" src="../image/empty-cup.png" alt="image_item">
+                    <figcaption class="grid__text">name</figcaption>
+                </figure>
+                <div class="rating-result">
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+    </section>
+    <figure class="ensuing_consequences">
+        <img class="ensuing_consequences__img" src="../image/alcohol.jpg" alt="Пикник">
+        <figcaption class="ensuing_consequences__text">Алкоголь вредит вашему здоровью!</figcaption>
+    </figure>
 </main>
 <footer>
     <p class="copyright">@ Copyright K.A.</p>
     <div class="contacts">
-        <h3>Contact us</h3>
+        <h3 class="contacts__text">Contact us</h3>
         <div>
-            <a class="vk_block" href="https://vk.com/id191274652"></a>
-            <a class="facebook_block" href="https://vk.com/id191274652"></a>
-            <a class="instagram_block" href="https://vk.com/id191274652"></a>
+            <a class="contacts__link vk_block" href="https://vk.com/id191274652"></a>
+            <a class="contacts__link facebook_block" href="https://vk.com/id191274652"></a>
+            <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
         </div>
     </div>
 </footer>

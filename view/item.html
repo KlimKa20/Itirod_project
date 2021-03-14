@@ -3,13 +3,14 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/item.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/shared.css"/>
     <meta charset="UTF-8">
     <title>Item</title>
 </head>
 <body>
 <header>
-    <div class="left_header">
-        <div class="hamburger-menu">
+    <div class="main-menu">
+        <div class="menu-hamburger">
             <input id="menu__toggle" type="checkbox"/>
             <label class="menu__btn" for="menu__toggle">
                 <span></span>
@@ -21,83 +22,81 @@
             </ul>
         </div>
         <div class="logo">
-            <img src="../image/wine-splash.jpg" alt="logo">
-            <h1>Cocktail database</h1>
+            <img class="logo__image" src="../image/wine-splash.jpg" alt="logo">
+            <h1 class="logo__text">Cocktail database</h1>
         </div>
     </div>
     <div>
-        <form class="search_form">
-            <input type="text" placeholder="Search">
-            <button type="button">&#128269</button>
+        <form class="search__form">
+            <input class="search__input" type="text" placeholder="Search">
+            <button class="search__button" type="button">&#128269</button>
         </form>
     </div>
 </header>
 <main>
-    <div class="Container">
-        <article class="baseContainer">
-            <div class="imgContainer">
-                <figure>
-                    <figcaption>Name</figcaption>
-                    <img src="../image/empty-cup.png">
-                </figure>
-                <div class="rating-area">
-                    <input type="radio" id="star-5" name="rating" value="5">
-                    <label for="star-5" title="Оценка «5»"></label>
-                    <input type="radio" id="star-4" name="rating" value="4">
-                    <label for="star-4" title="Оценка «4»"></label>
-                    <input type="radio" id="star-3" name="rating" value="3">
-                    <label for="star-3" title="Оценка «3»"></label>
-                    <input type="radio" id="star-2" name="rating" value="2">
-                    <label for="star-2" title="Оценка «2»"></label>
-                    <input type="radio" id="star-1" name="rating" value="1">
-                    <label for="star-1" title="Оценка «1»"></label>
-                </div>
+    <article class="cocktail__container">
+        <div class="cocktail__img-container">
+            <figure class="cocktail__name-block">
+                <figcaption class="cocktail__name">Name</figcaption>
+                <img class="cocktail__img" src="../image/empty-cup.png" alt="item_picture">
+            </figure>
+            <div class="rating-area">
+                <input type="radio" id="star-5" name="rating" value="5">
+                <label for="star-5" title="Оценка «5»"></label>
+                <input type="radio" id="star-4" name="rating" value="4">
+                <label for="star-4" title="Оценка «4»"></label>
+                <input type="radio" id="star-3" name="rating" value="3">
+                <label for="star-3" title="Оценка «3»"></label>
+                <input type="radio" id="star-2" name="rating" value="2">
+                <label for="star-2" title="Оценка «2»"></label>
+                <input type="radio" id="star-1" name="rating" value="1">
+                <label for="star-1" title="Оценка «1»"></label>
             </div>
-            <div class="outputContainer">
-                <ul class="list_of_ingredient">
-                    <li>
-                        <span class="ingredient">Milk:</span>
-                        <span class="precent">3%</span>
-                    </li>
-                    <li>
-                        <span class="ingredient">Water:</span>
-                        <span class="precent">3%</span>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <figure class="ensuing_consequences">
-            <img src="../image/alcohol.jpg" alt="Пикник">
-            <figcaption>Алкоголь вредит вашему здоровью!</figcaption>
-        </figure>
-        <section class="comments_block">
-            <form class="comment_form">
-                <p>
-                    <label><textarea placeholder="Enter your comment"></textarea>
-                    </label>
-                </p>
-                <button>Create</button>
-            </form>
-            <ul class="list_of_comments">
-                <li>
-                    <div class="comment_info">
-                        <p>aaa@mail.com</p>
-                        <time>2021-03-08</time>
-                    </div>
-                    <p class="comment_content">dgdfgdfg</p>
+        </div>
+        <div class="content__container">
+            <ul class="content__list">
+                <li class="content__item">
+                    <span class="content__ingredient">Milk:</span>
+                    <span class="content__precent">3%</span>
+                </li>
+                <li class="content__item">
+                    <span class="content__ingredient">Water:</span>
+                    <span class="content__precent">3%</span>
                 </li>
             </ul>
-        </section>
-    </div>
+        </div>
+    </article>
+    <figure class="ensuing_consequences">
+        <img class="ensuing_consequences__img" src="../image/alcohol.jpg" alt="Пикник">
+        <figcaption class="ensuing_consequences__text">Алкоголь вредит вашему здоровью!</figcaption>
+    </figure>
+    <section class="comments_block">
+        <form class="comment_form">
+            <p>
+                <label><textarea class="comment_form-text_textarea" placeholder="Enter your comment"></textarea>
+                </label>
+            </p>
+            <button class="comment_create-button">Create</button>
+        </form>
+        <ul class="comments_list">
+            <li class="comments_item">
+                <div class="comment_info">
+                    <p>aaa@mail.com</p>
+                    <time>2021-03-08</time>
+                </div>
+                <p class="comment_content">dgdfgdfg</p>
+            </li>
+        </ul>
+    </section>
 </main>
 <footer>
     <p class="copyright">@ Copyright K.A.</p>
     <div class="contacts">
-        <h3>Contact us</h3>
+        <h3 class="contacts__text">Contact us</h3>
         <div>
-            <a class="vk_block" href="https://vk.com/id191274652"></a>
-            <a class="facebook_block" href="https://vk.com/id191274652"></a>
-            <a class="instagram_block" href="https://vk.com/id191274652"></a>
+            <a class="contacts__link vk_block" href="https://vk.com/id191274652"></a>
+            <a class="contacts__link facebook_block" href="https://vk.com/id191274652"></a>
+            <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
         </div>
     </div>
 </footer>

@@ -1,4 +1,4 @@
-.baseContainer {
+.cocktail__container {
     padding-top: 95px;
     display: flex;
     height: 30vh;
@@ -7,24 +7,24 @@
     text-align: center;
 }
 
-
-.imgContainer {
+.cocktail__img-container {
     height: 10vh;
     min-height: 250px;
 }
 
-.imgContainer figure {
+.cocktail__name-block {
     height: 80%;
     margin-top: 40px;
 }
 
-.imgContainer img {
+.cocktail__img {
     margin-left: 40px;
     height: auto;
     width: 60%;
 }
 
-.outputContainer {
+.content__container {
+
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,8 @@
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
 }
 
-.imgContainer figcaption {
+.cocktail__name {
+    color: var(--font-field);;
     font-size: 24px;
     padding-bottom: 10px;
 }
@@ -71,30 +72,6 @@
     content: '★';
 }
 
-.ensuing_consequences img {
-    width: 100%;
-    height: 100%;
-}
-
-.ensuing_consequences figcaption {
-    width: 300px;
-    font-size: 24px;
-    height: 30px;
-    color: white;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    line-height: 30px;
-}
-
-.ensuing_consequences {
-    height: 400px;
-    position: relative;
-}
-
 .rating-area > input:checked ~ label {
     color: gold;
     text-shadow: 1px 1px #c60;
@@ -118,7 +95,7 @@
     position: relative;
 }
 
-.list_of_ingredient {
+.content__list {
     min-height: 200px;
     width: 300px;
     margin-left: 100px;
@@ -130,17 +107,14 @@
     list-style: none;
 }
 
-.list_of_ingredient li {
+.content__item {
+    color: var(--font-field);;
     margin: 10px auto;
 }
 
-.ingredient {
+.content__ingredient {
+    color: var(--font-field);;
     margin-right: 20px;
-}
-
-.creator {
-    width: 40%;
-    margin: 0 auto;
 }
 
 .comments_block {
@@ -154,18 +128,20 @@
 
 @media (max-device-width: 520px) {
     .comments_block {
-        margin: 80px auto 120px;
+        margin: 80px auto 250px;
     }
 }
 
-.comment_form textarea {
+.comment_form-text_textarea {
     padding: 10px;
     width: 90%;
     height: 100px;
     border-radius: 10px;
+    background-color: var(--background-field);
+    box-shadow: 0 0 15px 4px var(--item_shadow);
 }
 
-.comment_form button {
+.comment_create-button {
     padding: 10px 5px;
     margin: 10px auto;
     border: 1px solid #B3B3B3;
@@ -177,20 +153,20 @@
     font-size: 16px;
 }
 
-.list_of_comments {
+.comments_list {
     padding-left: 0;
 }
 
-.list_of_comments li {
+.comments_item {
     padding: 10px;
     text-align: left;
     display: flex;
     border-radius: 10px;
     width: 90%;
     border: 1px solid #B3B3B3;
-    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
-    color: black;
-    background-color: white;
+    box-shadow: 0 0 15px 4px var(--item_shadow);
+    color: var(--font-field);
+    background-color: var(--background-field);
     margin: 0 auto;
 }
 
@@ -202,6 +178,6 @@
     width: 65%;
 }
 
-.container {
+.other_enter__container {
     min-height: calc(100vh - 100px);
 }
