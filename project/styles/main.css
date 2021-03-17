@@ -193,15 +193,18 @@ header {
 
 #menu__toggle:checked ~ .menu__btn > span {
     transform: rotate(45deg);
+    background-color: var(--font-field);
 }
 
 #menu__toggle:checked ~ .menu__btn > span::before {
     top: 0;
+    background-color: var(--font-field);
     transform: rotate(0);
 }
 
 #menu__toggle:checked ~ .menu__btn > span::after {
     top: 0;
+    background-color: var(--font-field);
     transform: rotate(90deg);
 }
 
