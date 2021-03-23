@@ -30,7 +30,7 @@
 }
 
 .sort-selection li {
-    float: right;
+    float: left;
     position: relative;
 }
 
@@ -41,8 +41,11 @@
 .sort-selection li > ul {
     position: absolute;
     top: 50px;
-    right: 0;
     display: none;
+}
+
+.sort-selection li:last-child > ul {
+    right: 0;
 }
 
 .sort-selection li:hover > ul {
@@ -88,7 +91,7 @@
 
 .rating-result {
     margin: 10px auto;
-    width: 62%;
+    width: 72%;
     height: 12%;
     color: #D43737;
     border-radius: 10px;
@@ -118,12 +121,67 @@
     min-height: calc(100vh - 100px);
 }
 
-@media (max-device-width: 700px) {
+.grid__text {
+    color: var(--font-field);
+}
+
+@media (max-device-width: 768px) {
     .ensuing_consequences {
         margin-top: 10vh;
     }
+
+    .grid__container {
+        grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    }
+
+    .grid__container > a {
+        font-size: 35px;
+        height: 400px;
+    }
+
+    .sort-selection {
+        font-size: 1.5em;
+    }
+
+    .sort-selection ul {
+        height: 80px;
+    }
+
+    .sort-selection a {
+        line-height: 80px;
+    }
+
+    .sort-selection li > ul {
+        top: 80px;
+    }
 }
 
-.grid__text {
-    color: var(--font-field);
+@media (max-device-width: 520px) {
+    .sort-selection {
+        font-size: 2em;
+    }
+
+    .sort-selection ul {
+        height: 100px;
+    }
+
+    .sort-selection a {
+        line-height: 100px;
+    }
+
+    .sort-selection li > ul {
+        top: 100px;
+    }
+}
+
+@media (max-width: 805px) {
+    .grid__img {
+        width: 50%;
+    }
+}
+
+@media (max-width: 545px) {
+    .grid__img {
+        width: 40%;
+    }
 }

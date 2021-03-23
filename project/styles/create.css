@@ -63,13 +63,13 @@
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
 }
 
-.cocktail-create__btns {
-    display: flex;
-    justify-content: center;
-    color: white;
+.field_style:focus {
+    border: 1px solid #d92938;
 }
 
-.cocktail-create__btn {
+
+.btn_create {
+    margin: 0 auto;
     background-color: #D43737;
     padding: 5px 10px;
     width: 34%;
@@ -77,19 +77,101 @@
     color: var(--font-color);
 }
 
-.btn_create {
-    margin-right: 10px;
+.btn_add {
+    padding: 2px 1px 0 0;
+    background-color: #D43737;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 60%;
+    color: var(--font-color);
 }
 
 #new_li {
     margin-left: 40%;
 }
 
-@media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 768px) {
+
+    .create-container {
+        flex-direction: column;
+    }
+
+    .cocktail-fill__container,
+    .cocktail-create__form {
+        margin: 0 auto;
+    }
+
+    .cocktail-fill__image {
+        padding-left: 50px;
+    }
+
+    /*тута*/
     .field_style {
+        font-size: 2em;
+        height: 50px;
+    }
+
+    .cocktail-create__form {
+        width: 80%;
+    }
+
+    .btn_add {
+        font-size: 2em;
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn_create {
+        font-size: 2em;
         height: 40px;
     }
 
+    .cocktail-create-textarea {
+        height: 80px;
+    }
+
+    .cocktail-fill__container {
+        margin: 0 auto 15px auto;
+    }
 }
+
+@media screen and (max-device-width: 520px) {
+
+    .field_style {
+        font-size: 3em;
+        margin: 10px 0;
+        height: 70px;
+    }
+
+    .cocktail-create__form {
+        width: 90%;
+    }
+
+    .btn_add {
+        font-size: 3em;
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn_create {
+        font-size: 3em;
+        height: 60px;
+    }
+
+    .cocktail-create-textarea {
+        height: 120px;
+    }
+
+    .cocktail-create__form textarea {
+        margin: 20px auto;
+    }
+
+    .cocktail-fill__container {
+        margin: 0 auto 80px auto;
+        width: 40%;
+    }
+}
+
 
 

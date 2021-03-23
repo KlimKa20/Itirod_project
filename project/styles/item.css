@@ -95,17 +95,23 @@
     position: relative;
 }
 
-.content__list {
-    min-height: 200px;
+.content__field {
     width: 300px;
-    margin-left: 100px;
+    margin: 15px auto;
     border: 1px solid lightgray;
-    text-align: left;
+    color: var(--font-field);
     border-radius: 20px;
     font-size: 24px;
+    padding: 5px;
+}
+
+.content__list {
+    min-height: 200px;
+    text-align: left;
     padding: 20px;
     list-style: none;
 }
+
 
 .content__item {
     color: var(--font-field);;
@@ -126,12 +132,6 @@
     text-align: center;
 }
 
-@media (max-device-width: 520px) {
-    .comments_block {
-        margin: 80px auto 250px;
-    }
-}
-
 .comment_form-text_textarea {
     padding: 10px;
     width: 90%;
@@ -139,6 +139,10 @@
     border-radius: 10px;
     background-color: var(--background-field);
     box-shadow: 0 0 15px 4px var(--item_shadow);
+}
+
+.comment_form-text_textarea:focus {
+    border: 1px solid #d92938;
 }
 
 .comment_create-button {
@@ -180,4 +184,96 @@
 
 .other_enter__container {
     min-height: calc(100vh - 100px);
+}
+
+@media screen and (max-device-width: 768px) {
+    .cocktail__container {
+        display: block;
+    }
+
+    .cocktail__img {
+        height: 80%;
+        width: auto;
+    }
+
+    .cocktail__container {
+        min-height: 750px;
+    }
+
+    .content__container,
+    .content__field {
+        margin: 15px auto;
+    }
+
+    .content__list {
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+
+    .comments_block {
+        font-size: 1.2em;
+        width: 60%;
+        margin: 80px auto 120px;
+    }
+
+    .comment_create-button {
+        font-size: 1.2em;
+    }
+
+    .comment_form-text_textarea {
+        font-size: 1.2em;
+    }
+
+    .rating-area {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .rating-area:not(:checked) > label {
+        font-size: 250%;
+    }
+
+    .cocktail__name {
+        font-size: 2em;
+    }
+}
+
+@media (max-device-width: 520px) {
+    .comments_block {
+        font-size: 2em;
+        width: 75%;
+
+        margin: 80px auto 250px;
+    }
+
+    .comment_create-button {
+        font-size: 1em;
+    }
+
+    .comment_form-text_textarea {
+        font-size: 1em;
+        height: 150px;
+    }
+
+    .content__container,
+    .content__field {
+        width: 70%;
+        font-size: 1.5em;
+    }
+
+    .rating-area {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .rating-area:not(:checked) > label {
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 768px) {
+    .content__field {
+        width: 90%;
+    }
+
 }

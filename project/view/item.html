@@ -9,29 +9,19 @@
 </head>
 <body>
 <header>
-    <div class="main-menu">
-        <div class="menu-hamburger">
-            <input id="menu__toggle" type="checkbox"/>
-            <label class="menu__btn" for="menu__toggle">
-                <span></span>
-            </label>
-            <ul class="menu__box">
-                <li><a class="menu__item" href="../index.html">Catalog</a></li>
-                <li><a class="menu__item" href="сreate.html">Create</a></li>
-                <li><a class="menu__item" href="log.html">Log In</a></li>
-            </ul>
-        </div>
-        <div class="logo">
-            <img class="logo__image" src="../image/wine-splash.jpg" alt="logo">
-            <h1 class="logo__text">Cocktail database</h1>
-        </div>
+    <div class="logo">
+        <img class="logo__image" src="../image/wine-splash.jpg" alt="logo">
+        <h1 class="logo__text">Cocktail database</h1>
     </div>
-    <div>
-        <form class="search__form">
-            <input class="search__input" type="text" placeholder="Search">
-            <button class="search__button" type="button">&#128269</button>
-        </form>
-    </div>
+    <form class="search__form">
+        <input class="search__input" type="text" placeholder="Search">
+        <button class="search__button" type="button">&#128269</button>
+    </form>
+    <nav>
+        <a class="menu__item" href="../index.html">Catalog</a>
+        <a class="menu__item" href="сreate.html">Create</a>
+        <a class="menu__item" href="log.html">Log In</a>
+    </nav>
 </header>
 <main>
     <article class="cocktail__container">
@@ -54,7 +44,8 @@
             </div>
         </div>
         <div class="content__container">
-            <ul class="content__list">
+            <p class="content__field">recipe</p>
+            <ul class="content__field content__list">
                 <li class="content__item">
                     <span class="content__ingredient">Milk:</span>
                     <span class="content__precent">3%</span>
@@ -64,6 +55,7 @@
                     <span class="content__precent">3%</span>
                 </li>
             </ul>
+            <p class="content__field">Created by: <span>somebody</span></p>
         </div>
     </article>
     <figure class="ensuing_consequences">
@@ -72,10 +64,7 @@
     </figure>
     <section class="comments_block">
         <form class="comment_form">
-            <p>
-                <label><textarea class="comment_form-text_textarea" placeholder="Enter your comment"></textarea>
-                </label>
-            </p>
+            <textarea class="comment_form-text_textarea" placeholder="Enter your comment"></textarea>
             <button class="comment_create-button">Create</button>
         </form>
         <ul class="comments_list">
@@ -91,13 +80,11 @@
 </main>
 <footer>
     <p class="copyright">@ Copyright K.A.</p>
-    <div class="contacts">
+    <div>
         <h3 class="contacts__text">Contact us</h3>
-        <div>
-            <a class="contacts__link vk_block" href="https://vk.com/id191274652"></a>
-            <a class="contacts__link facebook_block" href="https://vk.com/id191274652"></a>
-            <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
-        </div>
+        <a class="contacts__link vk_block" href="https://vk.com/id191274652"></a>
+        <a class="contacts__link facebook_block" href="https://vk.com/id191274652"></a>
+        <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
     </div>
 </footer>
 </body>

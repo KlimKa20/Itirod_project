@@ -46,6 +46,13 @@
     width: 80%;
 }
 
+.identification__form input[type = text]:focus,
+.identification__form input[type = password]:focus,
+.identification__form button:focus {
+    border: 1px solid #d92938;
+}
+
+
 .identification__form button {
     color: var(--font-color);
     background-color: var(--background-header-color);
@@ -100,13 +107,18 @@
 
 .button_facebook {
     box-shadow: 1px 0 6px var(--item_shadow);
-    background-color: #2e3281
+    background-color: #2e3281;
+    border: 1px solid var(--border-color);
 }
 
-@media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 768px) {
     .landscape-container {
         visibility: hidden;
         display: none;
+    }
+
+    .identification__text_header {
+        font-size: 1.5em;
     }
 
     .identification-container {
@@ -125,8 +137,31 @@
     }
 
     .identification__text_footer {
-        font-size: 25px;
+        font-size: 2em;
         margin: 10px 20% 0 0;
     }
 
+}
+
+@media screen and (max-device-width: 520px) {
+
+    .identification__text_header {
+        font-size: 2em;
+    }
+
+    .identification__form, .other_enter__container {
+        width: 80%;
+    }
+
+    .identification__form input[type = text],
+    .identification__form input[type = password],
+    .identification__form button,
+    .other_enter__item {
+        height: 70px;
+        font-size: 2em;
+    }
+
+    .identification__text_footer {
+        font-size: 3em;
+    }
 }
