@@ -1,7 +1,9 @@
 # Itirod_project
 Климович Артём 853503
   
-Тема 8 (Cocktail database)
+Тема 8 (Cocktail database)  
+
+https://cocktail-database-cc73f.web.app
 
 Лаб2  
 Во второй лабораторной работе реализована html-верстка и css разметка в светлой и темной теме.    
