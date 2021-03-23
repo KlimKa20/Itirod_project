@@ -67,7 +67,7 @@ header {
 .search__form {
     position: relative;
     width: 15rem;
-    margin-left: 40px
+    margin-left: 20px
 }
 
 .search__input {
@@ -108,11 +108,10 @@ header {
 
 .logo__text {
     margin-left: 20px;
-    width: 80px;
+    width: 120px;
 }
 
 .logo__image {
-    margin-left: 15px;
     border-radius: 50%;
     width: 65px;
     height: 65px;

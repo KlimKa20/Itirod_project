@@ -104,9 +104,9 @@
 
     .cocktail-fill__image {
         padding-left: 50px;
+        width: 90%;
     }
 
-    /*тута*/
     .field_style {
         font-size: 2em;
         height: 50px;
