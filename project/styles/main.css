@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    --background-header-color: #e2323f;
+    --font-color: white;
+    --background-main-color: white;
+    --item_shadow: rgba(0, 0, 0, .2);
+    --link-color: rgb(186, 22, 40);
+    --background-field: #ECEFF1;
+    --font-field: black;
+    --border-color: #B3B3B3;
+    --background-cocktail: #cac6c6;
+    --background-footer: #B3B3B3;
+    --background-sorter: #819A32;
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        --background-sorter: #3a4810;
+        --item_shadow: rgb(28, 65, 32);
+        --background-header-color: #8a0615;
+        --font-color: white;
+        --background-main-color: #222b1d;
+        --link-color: #e2323f;
+        --background-field: #241f1f;
+        --font-field: white;
+        --border-color: #3b3a3a;
+        --background-cocktail: #483e3e;
+        --background-footer: #474f43;
+    }
+}
+
+html, body {
+    min-height: 100vh;
+    font-size: 14px;
+    background-color: var(--background-main-color);
+}
+
+textarea, input, button {
+    outline: none;
+}
+
+main {
+    background-color: var(--background-main-color);
+    min-height: 100%;
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+}
+
+header {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background-color: var(--background-header-color);
+    color: var(--font-color);
+    padding: 15px 40px;
+    min-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.search__form {
+    position: relative;
+    width: 15rem;
+    margin-left: 20px
+}
+
+.search__input {
+    min-width: 130px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 42px;
+    background: var(--background-field);
+    padding-left: 15px;
+    color: var(--font-field);
+}
+
+.search__input:focus {
+    border: 1px solid #d92938;
+}
+
+.search__button {
+    border: none;
+    outline: none;
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--background-header-color);
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0 2px 2px 2px;
+}
+
+.logo {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo__text {
+    margin-left: 20px;
+    width: 120px;
+}
+
+.logo__image {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+
+
+/* элементы меню */
+.menu__item {
+    min-width: 108px;
+    display: block;
+    padding: 12px 24px;
+    color: var(--font-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu__item:hover {
+    background-color: #e25656;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: var(--background-footer);
+    min-width: 650px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contacts__link {
+    display: inline-block;
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    line-height: 40px;
+    text-align: center;
+    background-color: var(--background-footer);
+    background-size: 100%;
+}
+
+.contacts__text {
+    color: var(--font-field);
+    text-align: center;
+}
+
+.vk_block {
+    margin: 0;
+    background-image: url(../image/jlNemutg.png);
+}
+
+.facebook_block {
+    background-image: url(../image/f_logo_RGB-Blue_1024.png);
+}
+
+.instagram_block {
+    background-image: url(../image/instagram_PNG9.png);
+}
+
+.copyright {
+    color: var(--font-field);
+}
+
+@media (max-device-width: 768px) {
+    .search__input {
+        font-size: 1.5em;
+        height: 50px;
+    }
+
+    .search__button {
+        height: 35px;
+        width: 35px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .menu__item {
+        font-size: 2em;
+    }
+
+    .grid__text {
+        font-size: 1.5em;
+    }
+
+    footer {
+        font-size: 1.5em;
+    }
+
+}
+
+@media (max-device-width: 520px) {
+    .search__input {
+        font-size: 2em;
+        height: 60px;
+    }
+
+    .search__button {
+        height: 45px;
+        width: 45px;
+    }
+
+    .contacts__link {
+        width: 60px;
+        height: 60px;
+    }
+}
