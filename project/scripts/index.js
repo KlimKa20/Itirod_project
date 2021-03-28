@@ -1,0 +1,2 @@
+
+let catalog = coffeeStorage.getAllCocktail();

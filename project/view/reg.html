@@ -4,6 +4,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/reg.css"/>
     <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="../scripts/auth.js"></script>
     <title>Registration</title>
 </head>
 <body>
@@ -35,11 +38,11 @@
                     <a href="log.html">LogIn</a>
                 </h2>
             </div>
-            <form class="identification__form">
-                <input type="text" placeholder="Type your email">
-                <input type="password" placeholder="Type your password">
-                <input type="password" placeholder="Repeat your password">
-                <button type="button">Join</button>
+            <form class="identification__form" onsubmit="submitSignUp();return false;">
+                <input id="login" type="text" placeholder="Type your email" required>
+                <input id="password" type="password" placeholder="Type your password" required>
+                <input id="repeat-password" type="password" placeholder="Repeat your password" required>
+                <button type="submit">Join</button>
             </form>
             <div class="other_enter__container">
                 <button type="button" class="other_enter__item button_google" href="#">Continue with Google</button>
@@ -61,5 +64,6 @@
         <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
     </div>
 </footer>
+
 </body>
 </html>
