@@ -16,13 +16,14 @@ class Storage {
         this.database = firebase.firestore();
     }
 
-    async getAllCocktail() {
-        this.database.collection("cocktails").add({
-            name: "Tokyo",
-            country: "Japan"
-        })
-            .then(function () {
-
+    getAllCocktail() {
+        return this.database.collection("cocktails").withConverter(cocktailConverter).get()
+            .then((querySnapshot) => {
+                let list = []
+                querySnapshot.forEach((doc) => {
+                    list.push(doc.data());
+                })
+                return list
             })
             .catch(function () {
 
@@ -30,9 +31,17 @@ class Storage {
     }
 
     addCocktail(cocktail) {
-        this.database.collection("cocktails").doc()
+        return this.database.collection("cocktails").doc()
             .withConverter(cocktailConverter)
-            .set(cocktail);
+            .set(cocktail)
+            .then(function () {
+                    return true;
+                }
+            )
+            .catch(function () {
+                    return false;
+                }
+            );
     }
 }
 

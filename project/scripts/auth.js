@@ -1,9 +1,10 @@
 
-function submitSigIn() {
+async function submitSigIn() {
     let email = document.getElementById('login').value;
     let password = document.getElementById('password').value;
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {z
+        .then((userCredential) => {
+            document.location.href = "../index.html";
             var user = userCredential.user;
         })
         .catch((error) => {

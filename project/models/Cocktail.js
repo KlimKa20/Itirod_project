@@ -16,7 +16,7 @@ var cocktailConverter = {
         return {
             name: cocktail.name,
             description: cocktail.description,
-            // ingredients: cocktail.ingredients,
+            ingredients: cocktail.ingredients,
             addedBy: cocktail.addedBy,
             createDate: cocktail.createDate,
             marks: cocktail.marks,

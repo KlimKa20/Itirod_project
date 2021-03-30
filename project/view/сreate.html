@@ -3,7 +3,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/create.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/ingredients.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="../models/Ingredient.js"></script>
     <script src="../models/Cocktail.js"></script>
@@ -32,6 +34,8 @@
     <div class="create-container">
         <div class="cocktail-fill__container">
             <img class="cocktail-fill__image" src="../image/empty-cup.png" alt="glass">
+            <div class="cocktail-ingredient"></div>
+            <div class="cocktail-ingredient"></div>
         </div>
         <form class="cocktail-create__form" onsubmit="submitCreate();return false;">
             <input id="name_field" class="field_style" type="text" placeholder="Name" required>
@@ -39,19 +43,19 @@
                 <ul class="cocktail-create__list">
                     <li class="cocktail-create__li">
                         <div class="cocktail-create__item">
-                            <select class="field_style cocktail-create__ingredient">
+                            <select class="field_style cocktail-create__ingredient" onchange="buildImg();">
                                 <option>Vodka</option>
                                 <option>Beer</option>
                                 <option>Cola</option>
                                 <option>Ice</option>
                                 <option>Tonic</option>
-                                <option>White Rom</option>
-                                <option>Black Rom</option>
+                                <option>White-Rom</option>
+                                <option>Black-Rom</option>
                                 <option>Lemon</option>
                                 <option>Juice</option>
                                 <option>Champagne</option>
                             </select>
-                            <input class="field_style cocktail-create__value" type="number" placeholder="value">
+                            <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="buildImg();" max="1000">
                         </div>
                     </li>
                 </ul>

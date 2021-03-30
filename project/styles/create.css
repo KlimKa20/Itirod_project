@@ -8,6 +8,7 @@
 }
 
 .cocktail-fill__container {
+    position: relative;
     margin: auto 0;
     width: 30%;
 }
@@ -178,4 +179,11 @@
 }
 
 
-
+.cocktail-ingredient {
+    position: absolute;
+    background-color: #2e3281;
+    height: 88%;
+    width: 64%;
+    left: 5%;
+    bottom: 7%;
+}
