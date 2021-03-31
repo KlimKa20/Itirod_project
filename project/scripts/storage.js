@@ -30,6 +30,15 @@ class Storage {
             });
     }
 
+    getCocktailById(id) {
+        return this.database.collection("cocktails").doc(id).withConverter(cocktailConverter).get()
+            .then((querySnapshot) => {
+                return querySnapshot.data()
+            })
+            .catch(function () {
+            });
+    }
+
     addCocktail(cocktail) {
         return this.database.collection("cocktails").doc()
             .withConverter(cocktailConverter)
@@ -45,4 +54,4 @@ class Storage {
     }
 }
 
-let coffeeStorage = new Storage();
+let cocktailStorage = new Storage();

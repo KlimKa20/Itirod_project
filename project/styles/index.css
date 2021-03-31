@@ -39,6 +39,7 @@
 }
 
 .sort-selection li > ul {
+    z-index: 2;
     position: absolute;
     top: 50px;
     display: none;
@@ -77,13 +78,19 @@
     font-size: 30px;
 }
 
+
 .grid__cocktail-img {
     padding-top: 25px;
     margin: 0 auto;
     height: 80%;
 }
 
+.grid__cocktail-container {
+    position: relative;
+}
 .grid__img {
+    position: relative;
+    z-index: 1;
     margin-left: 40px;
     width: 60%;
     height: auto;
@@ -124,6 +131,13 @@
 .grid__text {
     color: var(--font-field);
 }
+.cocktail-ingredient {
+    position: absolute;
+    height: 53%;
+    width: 39%;
+    left: 30%;
+    bottom: 34%;
+}
 
 @media (max-device-width: 768px) {
     .ensuing_consequences {
@@ -154,6 +168,10 @@
     .sort-selection li > ul {
         top: 80px;
     }
+    .cocktail-ingredient {
+        left: 27%;
+        bottom: 32%;
+    }
 }
 
 @media (max-device-width: 520px) {
@@ -172,11 +190,19 @@
     .sort-selection li > ul {
         top: 100px;
     }
+    .cocktail-ingredient {
+        left: 27%;
+        bottom: 32%;
+    }
 }
 
 @media (max-width: 805px) {
     .grid__img {
         width: 50%;
+    }
+    .cocktail-ingredient {
+        left: 30%;
+        bottom: 34%;
     }
 }
 
@@ -184,4 +210,8 @@
     .grid__img {
         width: 40%;
     }
+
 }
+
+
+

@@ -1,9 +1,8 @@
-// function addIngredient(){
-//     let ingredientsList = document.querySelector('.cocktail-create__list');
-//     let ingredientsItem = document.querySelector('.cocktail-create__li');
-//     let newIngredientsItem = ingredientsItem.cloneNode(true);
-//     ingredientsList.appendChild(newIngredientsItem);
-// }
+function isright(obj)
+{
+    if (obj.value>100) obj.value=100;
+    if (obj.value<1) obj.value=1;
+}
 
 function addIngredient() {
     let ingredientsList = document.querySelector('.cocktail-create__list');
@@ -23,7 +22,7 @@ function addIngredient() {
                                 <option>Juice</option>
                                 <option>Champagne</option>
                             </select>
-                            <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="buildImg();" max="1000">
+                            <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="isright(this);buildImg();" max="1000" required>
                         </div>`;
     ingredientsList.appendChild(ingredientItem);
 }
@@ -44,7 +43,7 @@ async function submitCreate() {
         let value = +ingredientsValues[i].value;
         ingredientsList[name] = value;
     }
-    let res = await coffeeStorage.addCocktail(new Cocktail(name, username, description, ingredientsList));
+    let res = await cocktailStorage.addCocktail(new Cocktail(name, username, description, ingredientsList));
     if (res){
         document.location.href = "../index.html";
     }

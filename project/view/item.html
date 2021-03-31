@@ -4,7 +4,14 @@
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/item.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/shared.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/ingredients.css"/>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="../models/Cocktail.js"></script>
+    <script src="../scripts/storage.js"></script>
+    <script src="../scripts/main.js"></script>
     <script src="../scripts/item.js"></script>
+
     <meta charset="UTF-8">
     <title>Item</title>
 </head>
@@ -14,9 +21,9 @@
         <img class="logo__image" src="../image/wine-splash.jpg" alt="logo">
         <h1 class="logo__text">Cocktail database</h1>
     </div>
-    <form class="search__form">
+    <form class="search__form" onsubmit="searchBar();return false;">
         <input class="search__input" type="text" placeholder="Search">
-        <button class="search__button" type="button">&#128269</button>
+        <button class="search__button" type="submit">&#128269</button>
     </form>
     <nav>
         <a class="menu__item" href="../index.html">Catalog</a>
@@ -46,17 +53,17 @@
         </div>
         <div class="content__container">
             <p class="content__field">recipe</p>
-            <ul class="content__field content__list">
-                <li class="content__item">
-                    <span class="content__ingredient">Milk:</span>
-                    <span class="content__precent">3%</span>
-                </li>
-                <li class="content__item">
-                    <span class="content__ingredient">Water:</span>
-                    <span class="content__precent">3%</span>
-                </li>
+            <ul id="ingredient_list" class="content__field content__list">
+<!--                <li class="content__item">-->
+<!--                    <span class="content__ingredient">Milk:</span>-->
+<!--                    <span class="content__precent">3%</span>-->
+<!--                </li>-->
+<!--                <li class="content__item">-->
+<!--                    <span class="content__ingredient">Water:</span>-->
+<!--                    <span class="content__precent">3%</span>-->
+<!--                </li>-->
             </ul>
-            <p class="content__field">Created by: <span>somebody</span></p>
+            <p class="content__field">Created by: <span id="creator">somebody</span></p>
         </div>
     </article>
     <figure class="ensuing_consequences">

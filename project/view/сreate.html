@@ -11,6 +11,8 @@
     <script src="../models/Cocktail.js"></script>
     <script src="../scripts/storage.js"></script>
     <script src="../scripts/create.js"></script>
+    <script src="../scripts/main.js"></script>
+
     <meta charset="UTF-8">
     <title>Create</title>
 </head>
@@ -20,9 +22,9 @@
         <img class="logo__image" src="../image/wine-splash.jpg" alt="logo">
         <h1 class="logo__text">Cocktail database</h1>
     </div>
-    <form class="search__form">
+    <form class="search__form" onsubmit="searchBar();return false;">
         <input class="search__input" type="text" placeholder="Search">
-        <button class="search__button" type="button">&#128269</button>
+        <button class="search__button" type="submit">&#128269</button>
     </form>
     <nav>
         <a class="menu__item" href="../index.html">Catalog</a>
@@ -34,8 +36,6 @@
     <div class="create-container">
         <div class="cocktail-fill__container">
             <img class="cocktail-fill__image" src="../image/empty-cup.png" alt="glass">
-            <div class="cocktail-ingredient"></div>
-            <div class="cocktail-ingredient"></div>
         </div>
         <form class="cocktail-create__form" onsubmit="submitCreate();return false;">
             <input id="name_field" class="field_style" type="text" placeholder="Name" required>
@@ -55,7 +55,7 @@
                                 <option>Juice</option>
                                 <option>Champagne</option>
                             </select>
-                            <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="buildImg();" max="1000">
+                            <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="isright(this);buildImg();" required>
                         </div>
                     </li>
                 </ul>
