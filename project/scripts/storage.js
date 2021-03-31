@@ -21,7 +21,7 @@ class Storage {
             .then((querySnapshot) => {
                 let list = []
                 querySnapshot.forEach((doc) => {
-                    list.push(doc.data());
+                    list.push({id:doc.id,item:doc.data()});
                 })
                 return list
             })

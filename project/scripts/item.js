@@ -5,7 +5,8 @@ async function cocktailDetail() {
     if (cocktail === undefined){
         return;
     }
-
+    let name =document.querySelector(".cocktail__name");
+    name.textContent = cocktail.name;
     let amount = 0;
     let list = document.getElementById("ingredient_list");
     let nameIngredients = cocktail.ingredients

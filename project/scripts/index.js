@@ -32,27 +32,59 @@ function createImage(item) {
 }
 
 async function fillCatalog() {
-    let catalog = await cocktailStorage.getAllCocktail();
+    let searchBar = getURLParam('searchBar');
+    let fullCatalog = await cocktailStorage.getAllCocktail();
+    let catalog = []
+    if (searchBar != null) {
+        for (let item of fullCatalog) {
+            let coffeeName = item.item.name.toLowerCase();
+            if (coffeeName.includes(searchBar)) {
+                catalog.push(item);
+            }
+        }
+    } else {
+        catalog = fullCatalog
+    }
+    let filter = getURLParam('filter');
+    if (filter === "top") {
+        catalog.sort((a, b) => getMarks(b) - getMarks(a));
+        catalog = catalog.slice(0, 1);
+    }
+    let sort = getURLParam('sort');
+    if (sort != null) {
+        switch (sort) {
+            case 'name':
+                catalog.sort((a, b) => ('' + a.item.name.toLowerCase()).localeCompare(b.item.name.toLowerCase()));
+                break;
+            case 'rating':
+                catalog.sort((a, b) => getMarks(b) - getMarks(a));
+                break;
+            case 'date':
+                catalog.sort((a, b) => b.item.createDate - a.item.createDate);
+                break;
+        }
+    }
     let grid = document.getElementById("grid__container");
     for (let item of catalog) {
         let cocktail = document.createElement("a");
         let cocktailContainer = document.createElement("div");
         cocktailContainer.classList.add("grid__cocktail-container")
-        let imageContainer = createImage(item);
+        let imageContainer = createImage(item.item);
 
         cocktailContainer.appendChild(imageContainer);
         let ratingContainer = document.createElement("div");
         ratingContainer.classList.add("rating-result");
+        let marks = getMarks(item)
         for (let i = 0; i < 5; i++) {
             let star = document.createElement("span");
-            if (true) {
+            if (i + 0.5 < marks) {
                 star.classList.add("active");
             }
             ratingContainer.appendChild(star)
         }
         cocktailContainer.appendChild(ratingContainer);
         cocktail.appendChild(cocktailContainer);
-        cocktail.setAttribute("href", "view/item.html");
+        cocktail.setAttribute("href", `view/item.html?id=${item.id}`);
         grid.appendChild(cocktail);
     }
 }

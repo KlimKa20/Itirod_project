@@ -23,20 +23,38 @@ function setSort(sort) {
     document.location.href = url;
 }
 
-async function searchBar() {
+async function searchBar(page) {
     let field = document.querySelector(".search__input");
     let text = field.value.trim().toLowerCase();
-
-    let catalog = await cocktailStorage.getAllCocktail();
-
-    for (let id in catalog) {
-        let coffeeName = catalog[id].name.toLowerCase();
-        if (coffeeName.includes(text)) {
-            document.location.href = `view/item.html?id=${catalog[id].id}`;
-            return;
-        }
+    if(page){
+        document.location.href = `../index.html?searchBar=${text}`;
     }
-
-    field.value = "";
-    alert("Ничего не найдено ");
+    else {
+        document.location.href = `index.html?searchBar=${text}`;
+    }
 }
+
+function getMarks(item){
+    if (item.item.marks.length === 0){
+        return 0;
+    }
+    let marks = Object.values(item.item.marks);
+    return marks.reduce((a, b) => (a + b)) / marks.length;
+}
+// async function searchBar() {
+//     let field = document.querySelector(".search__input");
+//     let text = field.value.trim().toLowerCase();
+//
+//     let catalog = await cocktailStorage.getAllCocktail();
+//
+//     for (let item of catalog) {
+//         let coffeeName = item.item.name.toLowerCase();
+//         if (coffeeName.includes(text)) {
+//             document.location.href = `view/item.html?id=${item.id}`;
+//             return;
+//         }
+//     }
+//
+//     field.value = "";
+//     alert("Ничего не найдено ");
+// }
