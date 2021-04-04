@@ -1,10 +1,11 @@
-function isright(obj)
-{
-    if (obj.value>100) obj.value=100;
-    if (obj.value<1) obj.value=1;
+function isright(obj) {
+    if (obj.value > 100) obj.value = 100;
+    if (obj.value < 1) obj.value = 1;
 }
 
 function addIngredient() {
+    const maxIngredients = 5
+
     let ingredientsList = document.querySelector('.cocktail-create__list');
     let ingredientItem = document.createElement('li');
     ingredientItem.classList.add('cocktail-create__li');
@@ -25,6 +26,13 @@ function addIngredient() {
                             <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="isright(this);buildImg();" max="1000" required>
                         </div>`;
     ingredientsList.appendChild(ingredientItem);
+
+    let fields = document.getElementsByClassName('cocktail-create__li')
+    if (maxIngredients === fields.length) {
+        let addButton = document.querySelector('.btn_add')
+        addButton.style.display = 'none';
+        return
+    }
 }
 
 async function submitCreate() {
@@ -44,29 +52,32 @@ async function submitCreate() {
         ingredientsList[name] = value;
     }
     let res = await cocktailStorage.addCocktail(new Cocktail(name, username, description, ingredientsList));
-    if (res){
+    if (res) {
         document.location.href = "../index.html";
     }
 }
 
-function buildImg(){
+function buildImg() {
     let oldIgredients = document.getElementsByClassName("cocktail-ingredient")
     while (oldIgredients.length !== 0) {
         oldIgredients[0].parentNode.removeChild(oldIgredients[0]);
     }
     let nameIngredients = document.getElementsByClassName('cocktail-create__ingredient');
     let valueIngredients = document.getElementsByClassName('cocktail-create__value');
-    let amount =0;
+    let amount = 0;
     for (let item of valueIngredients) {
         amount += +item.value;
     }
+    if (amount === 0) {
+        return
+    }
     let currentAmount = amount
-    let container =document.querySelector(".cocktail-fill__container");
-    for (let i = 0; i < nameIngredients.length; i++){
+    let container = document.querySelector(".cocktail-fill__container");
+    for (let i = 0; i < nameIngredients.length; i++) {
         let ingredientItem = document.createElement('div');
         ingredientItem.classList.add('cocktail-ingredient');
         ingredientItem.classList.add(nameIngredients[i].options[nameIngredients[i].selectedIndex].value.toLowerCase());
-        ingredientItem.setAttribute('style',  `height:${88*currentAmount/ amount}%`);
+        ingredientItem.setAttribute('style', `height:${88 * currentAmount / amount}%`);
         currentAmount -= valueIngredients[i].value
         container.appendChild(ingredientItem);
     }

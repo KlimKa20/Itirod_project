@@ -26,12 +26,12 @@ async function cocktailDetail() {
     }
     let currentAmount = amount
     let container =document.querySelector(".cocktail__name-block");
-
+    // let pp = document.querySelector(".cocktail__img").clientHeight
     for (let ingredient in nameIngredients) {
         let ingredientItem = document.createElement('div');
         ingredientItem.classList.add('cocktail-ingredient');
         ingredientItem.classList.add(ingredient.toLowerCase());
-        ingredientItem.setAttribute('style', `height:${103 * currentAmount / amount}%`);
+        ingredientItem.setAttribute('style', `height:${96*currentAmount / amount}%`);
         currentAmount -= +nameIngredients[ingredient]
         container.appendChild(ingredientItem);
     }

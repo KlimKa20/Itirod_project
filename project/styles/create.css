@@ -14,6 +14,8 @@
 }
 
 .cocktail-fill__image {
+    position: relative;
+    z-index: 1;
     height: auto;
     width: 100%;
 }
@@ -98,7 +100,7 @@
 .cocktail-ingredient {
     position: absolute;
     height: 88%;
-    width: 64%;
+    width: 65%;
     left: 5%;
     bottom: 7%;
 }
@@ -107,6 +109,7 @@
 
     .create-container {
         flex-direction: column;
+        min-height: 900px;
     }
 
     .cocktail-fill__container,
@@ -114,6 +117,9 @@
         margin: 0 auto;
     }
 
+    .cocktail-create__li{
+        margin-top: 10px;
+    }
     .cocktail-fill__image {
         padding-left: 50px;
         width: 90%;
@@ -135,6 +141,7 @@
     }
 
     .btn_create {
+        padding: 0;
         font-size: 2em;
         height: 40px;
     }

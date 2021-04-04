@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="styles/ingredients.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="models/Cocktail.js"></script>
     <script src="scripts/storage.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="scripts/auth.js"></script>
     <meta charset="UTF-8">
     <title>Cocktail database</title>
 </head>
@@ -27,7 +27,7 @@
     <nav>
         <a class="menu__item" href="index.html">Catalog</a>
         <a class="menu__item" href="view/сreate.html">Create</a>
-        <a class="menu__item" href="view/log.html">Log In</a>
+        <a id="auth" class="menu__item" href="view/log.html">Log In</a>
     </nav>
 </header>
 <main>
@@ -66,6 +66,8 @@
         <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
     </div>
 </footer>
+<script src="scripts/main.js"></script>
+<script src="scripts/index.js"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/8.3.0/firebase-app.js"></script>

@@ -1,33 +1,49 @@
+class auth {
 
-async function submitSigIn() {
-    let email = document.getElementById('login').value;
-    let password = document.getElementById('password').value;
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            document.location.href = "../index.html";
-            var user = userCredential.user;
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+    isAuth() {
+        return  firebase.auth().onAuthStateChanged(function(user) {
+            return !!user;
         });
-}
-
-function submitSignUp() {
-    let email = document.getElementById('login').value;
-    let password = document.getElementById('password').value;
-    let repeatPassword = document.getElementById('repeat-password').value;
-
-    if (repeatPassword !== password) {
-        alert("Пароли отличаются")
-        return
     }
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function () {
-            console.log("fsdf");
-        })
-        .catch(function (error) {
-            alert("Логин был испоьзован ранее")
-        })
+
+    async submitSigIn() {
+        let email = document.getElementById('login').value;
+        let password = document.getElementById('password').value;
+        await firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                this.user = userCredential.user;
+                document.location.href = "../index.html";
+            })
+            .catch((error) => {
+                alert("Неправильный логин или пароль")
+            });
+    }
+
+    async submitSignUp() {
+        let email = document.getElementById('login').value;
+        let password = document.getElementById('password').value;
+        let repeatPassword = document.getElementById('repeat-password').value;
+
+        if (repeatPassword !== password) {
+            alert("Пароли отличаются")
+            return
+        }
+        await firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(function () {
+                document.location.href = "../index.html";
+            })
+            .catch(function (error) {
+                alert("Логин был испоьзован ранее")
+            })
+    }
+
+    async logOut() {
+        await firebase.auth().signOut().then(function () {
+            location.reload()
+        });
+    }
 }
+
+let authObject = new auth()
+
 

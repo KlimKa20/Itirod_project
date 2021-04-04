@@ -19,7 +19,7 @@ function createImage(item) {
         let ingredientItem = document.createElement('div');
         ingredientItem.classList.add('cocktail-ingredient');
         ingredientItem.classList.add(ingredient.toLowerCase());
-        ingredientItem.setAttribute('style', `height:${53 * currentAmount / amount}%`);
+        ingredientItem.setAttribute('style', `height:${54 * currentAmount / amount}%`);
         currentAmount -= +nameIngredients[ingredient]
         imageContainer.appendChild(ingredientItem);
     }
@@ -90,3 +90,4 @@ async function fillCatalog() {
 }
 
 fillCatalog()
+

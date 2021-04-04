@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-    <script src="../scripts/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="../scripts/storage.js"></script>
     <script src="../scripts/auth.js"></script>
     <title>Login</title>
@@ -24,7 +24,7 @@
     <nav>
         <a class="menu__item" href="../index.html">Catalog</a>
         <a class="menu__item" href="сreate.html">Create</a>
-        <a class="menu__item" href="log.html">Log In</a>
+        <a id="auth" class="menu__item" href="log.html">Log In</a>
     </nav>
 </header>
 <main>
@@ -40,7 +40,7 @@
                     <a href="reg.html">Join</a>
                 </h2>
             </div>
-            <form class="identification__form" onsubmit="submitSigIn();return false;">
+            <form class="identification__form" onsubmit="authObject.submitSigIn();return false;">
                 <input id="login" type="text" placeholder="Type your email" required>
                 <input id="password"  type="password" placeholder="Type your password" required>
                 <button type="submit">Login</button>
@@ -65,5 +65,6 @@
         <a class="contacts__link instagram_block" href="https://vk.com/id191274652"></a>
     </div>
 </footer>
+<script src="../scripts/main.js"></script>
 </body>
 </html>

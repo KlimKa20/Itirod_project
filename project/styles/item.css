@@ -22,7 +22,8 @@
     position: relative;
     z-index: 1;
     margin-left: 40px;
-    height: auto;
+    height: 100%;
+    min-width: 200px;
     width: 60%;
 }
 
@@ -193,9 +194,10 @@
 .cocktail-ingredient {
     position: absolute;
     height: 103%;
+    min-width: 136px;
     width: 40%;
-    left: 27%;
-    bottom: -28%;
+    left: 28%;
+    bottom: -15%;
 }
 @media screen and (max-device-width: 768px) {
     .cocktail__container {
@@ -203,8 +205,12 @@
     }
 
     .cocktail__img {
-        height: 80%;
+        position: absolute;
+        height: 100%;
+        bottom: 0%;
+        right: 36%;
         width: auto;
+        min-height: 0;
     }
 
     .cocktail__container {
@@ -245,14 +251,16 @@
     }
 
     .cocktail__name {
+        position: relative;
         font-size: 2em;
+        bottom: 35px;
     }
 
     .cocktail-ingredient {
         height: 73%;
-        width: 12%;
-        left: 44%;
-        bottom: 3%;
+        width: 15%;
+        left: 43%;
+        bottom: 4%;
     }
 }
 
@@ -289,9 +297,6 @@
     }
     .cocktail-ingredient {
         height: 73%;
-        width: 12%;
-        left: 44%;
-        bottom: 4%;
     }
 }
 

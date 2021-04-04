@@ -26,35 +26,34 @@ function setSort(sort) {
 async function searchBar(page) {
     let field = document.querySelector(".search__input");
     let text = field.value.trim().toLowerCase();
-    if(page){
+    if (page) {
         document.location.href = `../index.html?searchBar=${text}`;
-    }
-    else {
+    } else {
         document.location.href = `index.html?searchBar=${text}`;
     }
 }
 
-function getMarks(item){
-    if (item.item.marks.length === 0){
+function getMarks(item) {
+    if (item.item.marks.length === 0) {
         return 0;
     }
     let marks = Object.values(item.item.marks);
     return marks.reduce((a, b) => (a + b)) / marks.length;
 }
-// async function searchBar() {
-//     let field = document.querySelector(".search__input");
-//     let text = field.value.trim().toLowerCase();
-//
-//     let catalog = await cocktailStorage.getAllCocktail();
-//
-//     for (let item of catalog) {
-//         let coffeeName = item.item.name.toLowerCase();
-//         if (coffeeName.includes(text)) {
-//             document.location.href = `view/item.html?id=${item.id}`;
-//             return;
-//         }
-//     }
-//
-//     field.value = "";
-//     alert("Ничего не найдено ");
-// }
+
+async function former() {
+    let item = document.getElementById("auth");
+
+    // let result = await authObject.isAuth();
+    // if (result) {
+    //     item.textContent = "LogOut";
+    //     item.href = "#"
+    //     item.onclick = function () {
+    //         authObject.logOut();
+    //     };
+    // } else {
+    //     item.textContent = "LogIn";
+    // }
+}
+
+former()

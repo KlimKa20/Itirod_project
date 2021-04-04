@@ -60,7 +60,7 @@
 
 .grid__container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(283px, 1fr));
     grid-gap: 10px;
     padding: 10px;
     width: 100%;
@@ -69,8 +69,9 @@
 .grid__container > a {
     text-decoration: none;
     color: black;
-    margin: 10px;
-    min-width: 200px;
+    margin: 10px auto;
+    /*min-width: 200px;*/
+    width: 280px;
     border-radius: 10px;
     height: 300px;
     background-color: var(--background-cocktail);
@@ -134,7 +135,7 @@
 .cocktail-ingredient {
     position: absolute;
     height: 53%;
-    width: 39%;
+    width: 40%;
     left: 30%;
     bottom: 34%;
 }
@@ -151,8 +152,13 @@
     .grid__container > a {
         font-size: 35px;
         height: 400px;
+        width: 430px;
     }
 
+    .grid__img{
+        padding-top: 20px;
+        height: 240px;
+    }
     .sort-selection {
         font-size: 1.5em;
     }
@@ -197,19 +203,19 @@
 }
 
 @media (max-width: 805px) {
-    .grid__img {
-        width: 50%;
-    }
-    .cocktail-ingredient {
-        left: 30%;
-        bottom: 34%;
-    }
+    /*.grid__img {*/
+    /*    width: 50%;*/
+    /*}*/
+    /*.cocktail-ingredient {*/
+    /*    left: 30%;*/
+    /*    bottom: 34%;*/
+    /*}*/
 }
 
 @media (max-width: 545px) {
-    .grid__img {
-        width: 40%;
-    }
+    /*.grid__img {*/
+    /*    width: 40%;*/
+    /*}*/
 
 }
 
