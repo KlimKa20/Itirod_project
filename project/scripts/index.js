@@ -84,7 +84,7 @@ async function fillCatalog() {
         }
         cocktailContainer.appendChild(ratingContainer);
         cocktail.appendChild(cocktailContainer);
-        cocktail.setAttribute("href", `view/item.html?id=${item.id}`);
+        cocktail.onclick = function (){onNextPage(`/Itirod_project/project/item?id=${item.id}`)}
         grid.appendChild(cocktail);
     }
 }
