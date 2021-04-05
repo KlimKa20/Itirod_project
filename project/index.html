@@ -15,6 +15,7 @@
     <script src="view/item.js"></script>
     <script src="view/log.js"></script>
     <script src="view/reg.js"></script>
+    <script src="view/notFound.js"></script>
     <meta charset="UTF-8">
     <title>Cocktail database</title>
 </head>
@@ -30,7 +31,7 @@
     </form>
     <nav>
         <a class="menu__item" onclick="onNextPage('/Itirod_project/project/catalog')">Catalog</a>
-        <a class="menu__item" onclick="onNextPage('/Itirod_project/project/create')">Create</a>
+        <a id="create" class="menu__item" onclick="onNextPage('/Itirod_project/project/create')">Create</a>
         <a id="auth" class="menu__item" onclick="onNextPage('/Itirod_project/project/login')">Log In</a>
     </nav>
 </header>

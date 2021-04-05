@@ -77,7 +77,7 @@ async function fillCatalog() {
         let marks = getMarks(item)
         for (let i = 0; i < 5; i++) {
             let star = document.createElement("span");
-            if (i + 0.5 < marks) {
+            if (i + 0.5 <= marks) {
                 star.classList.add("active");
             }
             ratingContainer.appendChild(star)

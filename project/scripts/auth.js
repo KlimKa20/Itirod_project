@@ -1,8 +1,29 @@
 class auth {
+    constructor() {
+        this.user = null
+    }
 
     isAuth() {
-        return  firebase.auth().onAuthStateChanged(function(user) {
-            return !!user;
+        firebase.auth().onAuthStateChanged(function (user) {
+            let log = document.getElementById("auth");
+            let create = document.getElementById("create");
+            if (user) {
+                log.textContent = "LogOut";
+                log.onclick = function () {
+                    authObject.logOut()
+                }
+                create.onclick = function (){
+                    onNextPage('/Itirod_project/project/create')
+                }
+            } else {
+                log.textContent = "LogIn";
+                log.onclick = function () {
+                    onNextPage('/Itirod_project/project/login')
+                }
+                create.onclick = function (){
+                    onNextPage('/Itirod_project/project/login')
+                }
+            }
         });
     }
 
@@ -12,7 +33,7 @@ class auth {
         await firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 this.user = userCredential.user;
-                document.location.href = "../index.html";
+                onNextPage("/Itirod_project/project/catalog")
             })
             .catch((error) => {
                 alert("Неправильный логин или пароль")
@@ -30,7 +51,7 @@ class auth {
         }
         await firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(function () {
-                document.location.href = "../index.html";
+                onNextPage("/Itirod_project/project/catalog")
             })
             .catch(function (error) {
                 alert("Логин был испоьзован ранее")
@@ -39,7 +60,7 @@ class auth {
 
     async logOut() {
         await firebase.auth().signOut().then(function () {
-            location.reload()
+            onNextPage("/Itirod_project/project/catalog")
         });
     }
 }

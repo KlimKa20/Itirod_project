@@ -63,6 +63,10 @@ header {
     justify-content: space-between;
 }
 
+.not_found {
+    margin-top: 100px;
+    text-align: center;
+}
 
 .search__form {
     position: relative;

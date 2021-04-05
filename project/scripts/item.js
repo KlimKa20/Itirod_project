@@ -1,8 +1,19 @@
 
+function setMark(mark){
+    let user = authObject.user;
+    if (user == null) {
+        alert('Необходимо авторизироваться');
+        return;
+    }
+    let id = getURLParam('id');
+    cocktailStorage.setMark(id,user.email,mark.value)
+}
+
 async function cocktailDetail() {
     let id = getURLParam('id');
     let cocktail = await cocktailStorage.getCocktailById(id);
     if (cocktail === undefined){
+        onNextPage('/Itirod_project/project/notFound')
         return;
     }
     let name =document.querySelector(".cocktail__name");
@@ -26,7 +37,6 @@ async function cocktailDetail() {
     }
     let currentAmount = amount
     let container =document.querySelector(".cocktail__name-block");
-    // let pp = document.querySelector(".cocktail__img").clientHeight
     for (let ingredient in nameIngredients) {
         let ingredientItem = document.createElement('div');
         ingredientItem.classList.add('cocktail-ingredient');

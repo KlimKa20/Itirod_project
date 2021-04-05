@@ -21,7 +21,7 @@ class Storage {
             .then((querySnapshot) => {
                 let list = []
                 querySnapshot.forEach((doc) => {
-                    list.push({id:doc.id,item:doc.data()});
+                    list.push({id: doc.id, item: doc.data()});
                 })
                 return list
             })
@@ -51,6 +51,13 @@ class Storage {
                     return false;
                 }
             );
+    }
+
+    setMark(cocktails, user, value) {
+        this.database.collection("cocktails").doc(cocktails).update({
+            marks: firebase.firestore.FieldValue.arrayUnion({user:user,
+                                                             value: +value})
+        })
     }
 }
 

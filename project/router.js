@@ -5,7 +5,8 @@ const paths = {
     '/Itirod_project/project/create': [create, "scripts/create.js"],
     '/Itirod_project/project/item': [item, "scripts/item.js"],
     '/Itirod_project/project/login': [log, null],
-    '/Itirod_project/project/reg': [reg, null]
+    '/Itirod_project/project/reg': [reg, null],
+    '/Itirod_project/project/notFound': [notFound, null]
 };
 
 // const paths = {
@@ -14,7 +15,8 @@ const paths = {
 //     '/create' : [create,"scripts/create.js"],
 //     '/item' : [item,"scripts/item.js"],
 //     '/login' : [log,null],
-//     '/register' : [reg,null]
+//     '/register' : [reg,null],
+//     '/notFound': [notFound, null]
 // };
 function getPath(url) {
     let index = url.indexOf('?');
@@ -28,6 +30,7 @@ async function onchangePage(url) {
     let path = getPath(url)
     let scriptContent = paths[path];
     if (scriptContent === undefined) {
+        onNextPage('/Itirod_project/project/notFound')
         return
     }
     content.innerHTML = scriptContent[0]
@@ -42,7 +45,9 @@ async function onchangePage(url) {
 window.onpopstate = () => {
     onchangePage(window.location.pathname);
 }
-
+window.onload = function() {
+    authObject.isAuth();
+};
 const content = document.getElementById("content")
 
 const onNextPage = (pathname) => {

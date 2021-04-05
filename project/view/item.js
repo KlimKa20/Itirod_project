@@ -8,15 +8,15 @@ const item =
                 <img class="cocktail__img" src="image/empty-cup.png" alt="item_picture">
             </figure>
             <div class="rating-area">
-                <input type="radio" id="star-5" name="rating" value="5">
+                <input type="radio" id="star-5" name="rating" value="5" onclick="setMark(this);">
                 <label for="star-5" title="Оценка «5»"></label>
-                <input type="radio" id="star-4" name="rating" value="4">
+                <input type="radio" id="star-4" name="rating" value="4" onclick="setMark(this);">
                 <label for="star-4" title="Оценка «4»"></label>
-                <input type="radio" id="star-3" name="rating" value="3">
+                <input type="radio" id="star-3" name="rating" value="3" onclick="setMark(this);">
                 <label for="star-3" title="Оценка «3»"></label>
-                <input type="radio" id="star-2" name="rating" value="2">
+                <input type="radio" id="star-2" name="rating" value="2" onclick="setMark(this);">
                 <label for="star-2" title="Оценка «2»"></label>
-                <input type="radio" id="star-1" name="rating" value="1">
+                <input type="radio" id="star-1" name="rating" value="1" onclick="setMark(this);">
                 <label for="star-1" title="Оценка «1»"></label>
             </div>
         </div>

@@ -36,7 +36,7 @@ function addIngredient() {
 }
 
 async function submitCreate() {
-    let user = firebase.auth().currentUser;
+    let user = authObject.user;
     let username;
     if (user != null) {
         username = user.email;
@@ -48,12 +48,11 @@ async function submitCreate() {
     let ingredientsValues = document.getElementsByClassName('cocktail-create__value');
     for (let i = 0; i < ingredientsSelects.length; i++) {
         let name = ingredientsSelects[i].options[ingredientsSelects[i].selectedIndex].value;
-        let value = +ingredientsValues[i].value;
-        ingredientsList[name] = value;
+        ingredientsList[name] = +ingredientsValues[i].value;
     }
     let res = await cocktailStorage.addCocktail(new Cocktail(name, username, description, ingredientsList));
     if (res) {
-        document.location.href = "../index.html";
+        onNextPage('/Itirod_project/project/catalog')
     }
 }
 
