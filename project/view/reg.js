@@ -19,8 +19,8 @@ const reg =
                 <button type="submit">Join</button>
             </form>
             <div class="other_enter__container">
-                <button type="button" class="other_enter__item button_google" href="#">Continue with Google</button>
-                <button type="button" class="other_enter__item button_facebook" href="#">Continue with Facebook</button>
+                <button type="button" class="other_enter__item button_google" onclick="authObject.SigInWithGoogle();return false;">Continue with Google</button>
+                <button type="button" class="other_enter__item button_facebook" onclick="authObject.SigInWithFacebook();return false;">Continue with Facebook</button>
             </div>
             <div class="identification__text_footer">
                 <span>Already have a profile?</span>

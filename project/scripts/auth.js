@@ -38,6 +38,25 @@ class auth {
             });
     }
 
+    async SigInWithGoogle() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        await firebase.auth().signInWithPopup(provider)
+            .then(() => {
+                onNextPage("/Itirod_project/project/catalog")
+            }).catch(() => {
+                alert("Неправильный логин или пароль")
+            });
+    }
+    async SigInWithFacebook() {
+        const provider = new firebase.auth.FacebookAuthProvider();
+        await firebase.auth().signInWithPopup(provider)
+            .then(() => {
+                onNextPage("/Itirod_project/project/catalog")
+            }).catch(() => {
+                alert("Неправильный логин или пароль")
+            });
+    }
+
     async submitSignUp() {
         let email = document.getElementById('login').value;
         let password = document.getElementById('password').value;
