@@ -1,13 +1,14 @@
+const maxIngredients = 5
+
 function isright(obj) {
     if (obj.value > 100) obj.value = 100;
     if (obj.value < 1) obj.value = 1;
 }
 
 function addIngredient() {
-    const maxIngredients = 5
-
     let ingredientsList = document.querySelector('.cocktail-create__list');
     let ingredientItem = document.createElement('li');
+    let fields = document.getElementsByClassName('cocktail-create__li')
     ingredientItem.classList.add('cocktail-create__li');
     ingredientItem.innerHTML =
         `<div class="cocktail-create__item">
@@ -24,15 +25,26 @@ function addIngredient() {
                                 <option>Champagne</option>
                             </select>
                             <input class="field_style cocktail-create__value" type="number" placeholder="value" oninput="isright(this);buildImg();" max="1000" required>
+                            <button type="button" class="btn_del" onclick="removeIngredient(event)">-</button>
                         </div>`;
     ingredientsList.appendChild(ingredientItem);
 
-    let fields = document.getElementsByClassName('cocktail-create__li')
+
     if (maxIngredients === fields.length) {
-        let addButton = document.querySelector('.btn_add')
+        let addButton = document.querySelector('.btn_add');
         addButton.style.display = 'none';
-        return
     }
+}
+
+function removeIngredient(event) {
+    let items = document.getElementsByClassName('cocktail-create__li');
+    if (items.length === maxIngredients) {
+        let addButton = document.querySelector('.btn_add');
+        addButton.style.display = 'block';
+    }
+    let item = event.srcElement.closest(".cocktail-create__li");
+    item.parentNode.removeChild(item);
+    buildImg();
 }
 
 async function submitCreate() {
@@ -44,7 +56,12 @@ async function submitCreate() {
     let ingredientsValues = document.getElementsByClassName('cocktail-create__value');
     for (let i = 0; i < ingredientsSelects.length; i++) {
         let name = ingredientsSelects[i].options[ingredientsSelects[i].selectedIndex].value;
-        ingredientsList[name] = +ingredientsValues[i].value;
+        if (ingredientsList[name] === undefined){
+            ingredientsList[name] = +ingredientsValues[i].value;
+        }
+        else {
+            ingredientsList[name] += +ingredientsValues[i].value;
+        }
     }
     let res = await cocktailStorage.addCocktail(new Cocktail(name, user, description, ingredientsList));
     if (res) {

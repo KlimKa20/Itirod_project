@@ -1,5 +1,5 @@
 class Cocktail {
-    constructor(name, addedBy, description, ingredients,createDate = new Date()) {
+    constructor(name, addedBy, description, ingredients, createDate = new Date()) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
@@ -21,7 +21,7 @@ var cocktailConverter = {
     },
     fromFirestore: function (snapshot, options) {
         const data = snapshot.data(options);
-        return new Cocktail(data.name,data.addedBy, data.description,data.ingredients,
+        return new Cocktail(data.name, data.addedBy, data.description, data.ingredients,
             new Date(data.createDate * 1000));
     }
 };

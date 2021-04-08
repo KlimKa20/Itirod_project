@@ -44,16 +44,17 @@ class auth {
             .then(() => {
                 onNextPage("/Itirod_project/project/catalog")
             }).catch(() => {
-                alert("Неправильный логин или пароль")
+                alert("Невозможно авторизоваться с помощью гугла")
             });
     }
+
     async SigInWithFacebook() {
         const provider = new firebase.auth.FacebookAuthProvider();
         await firebase.auth().signInWithPopup(provider)
             .then(() => {
                 onNextPage("/Itirod_project/project/catalog")
             }).catch(() => {
-                alert("Неправильный логин или пароль")
+                alert("Невозможно авторизоваться с помощью фейсбука")
             });
     }
 

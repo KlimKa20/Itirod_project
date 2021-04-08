@@ -41,7 +41,7 @@
     margin-bottom: 5px;
 }
 
-.cocktail-create__li{
+.cocktail-create__li {
     margin-bottom: 5px;
 }
 
@@ -84,6 +84,18 @@
     color: var(--font-color);
 }
 
+.btn_del {
+    font-size: 18px;
+    position: absolute;
+    margin-left: 9px;
+    color: var(--font-color);
+    padding: 2px 1px 3px 0;
+    border-radius: 50%;
+    background-color: #D43737;
+    width: 30px;
+    height: 30px;
+}
+
 .btn_add {
     padding: 2px 1px 0 0;
     background-color: #D43737;
@@ -97,6 +109,7 @@
 #new_li {
     margin-left: 40%;
 }
+
 .cocktail-ingredient {
     position: absolute;
     height: 88%;
@@ -117,9 +130,10 @@
         margin: 0 auto;
     }
 
-    .cocktail-create__li{
+    .cocktail-create__li {
         margin-top: 10px;
     }
+
     .cocktail-fill__image {
         padding-left: 50px;
         width: 90%;
@@ -153,6 +167,7 @@
     .cocktail-fill__container {
         margin: 0 auto 15px auto;
     }
+
     .cocktail-ingredient {
         position: absolute;
         height: 88%;

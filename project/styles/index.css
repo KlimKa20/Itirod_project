@@ -66,7 +66,8 @@
     width: 100%;
 }
 
-.grid__container > a {
+.grid__container > cocktail-item,
+.grid__container > cocktail-item> a{
     text-decoration: none;
     color: black;
     margin: 10px auto;
