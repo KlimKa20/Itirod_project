@@ -39,6 +39,42 @@ class Storage {
             });
     }
 
+    getAllMarks(idCocktail) {
+        return this.database.collection("cocktails").doc(idCocktail).collection("stars").get()
+            .then((querySnapshot) => {
+                let list = []
+                querySnapshot.forEach((doc) => {
+                    list.push(doc.data().value);
+                })
+                return list
+            })
+            .catch(function () {
+            });
+    }
+
+    getMark(idCocktail, idUser) {
+        return this.database.collection("cocktails").doc(idCocktail).collection("stars").doc(idUser).get()
+            .then((querySnapshot) => {
+                return querySnapshot.data().value
+            })
+            .catch(function () {
+            });
+    }
+
+    getAllComments(idCocktail) {
+        return this.database.collection("cocktails").doc(idCocktail).collection("comments").get()
+            .then((querySnapshot) => {
+                let list = []
+                querySnapshot.forEach((doc) => {
+                    list.push(doc.data());
+                })
+                return list
+            })
+            .catch(function () {
+            });
+    }
+
+
     addCocktail(cocktail) {
         return this.database.collection("cocktails").doc()
             .withConverter(cocktailConverter)
@@ -54,9 +90,16 @@ class Storage {
     }
 
     setMark(cocktails, user, value) {
-        this.database.collection("cocktails").doc(cocktails).update({
-            marks: firebase.firestore.FieldValue.arrayUnion({user:user,
-                                                             value: +value})
+        this.database.collection("cocktails").doc(cocktails).collection("stars").doc(user).set({
+            value: +value
+        })
+    }
+
+    setComments(cocktails, user, text, time) {
+        this.database.collection("cocktails").doc(cocktails).collection("comments").doc().set({
+            user: user,
+            value: text,
+            date: time
         })
     }
 }

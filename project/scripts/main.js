@@ -29,14 +29,10 @@ async function searchBar() {
     onNextPage(`/Itirod_project/project/catalog?searchBar=${text}`);
 }
 
-function getMarks(item) {
-    let marks = Object.values(item.item.marks);
+async function getMarks(item) {
+    let marks = await cocktailStorage.getAllMarks(item.id);
     if (marks.length === 0) {
         return 0;
     }
-    let mm = []
-    marks.forEach((item) => {
-        mm.push(item.value)
-    })
-    return mm.reduce((a, b) => (a + b)) / marks.length;
+    return marks.reduce((a, b) => (a + b)) / marks.length;
 }

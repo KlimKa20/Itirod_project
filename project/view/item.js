@@ -8,15 +8,15 @@ const item =
                 <img class="cocktail__img" src="image/empty-cup.png" alt="item_picture">
             </figure>
             <div class="rating-area">
-                <input type="radio" id="star-5" name="rating" value="5" onclick="setMark(this);">
+                <input class="star-rating" type="radio" id="star-5" name="rating" value="5" onclick="setMark(this);">
                 <label for="star-5" title="Оценка «5»"></label>
-                <input type="radio" id="star-4" name="rating" value="4" onclick="setMark(this);">
+                <input class="star-rating" type="radio" id="star-4" name="rating" value="4" onclick="setMark(this);">
                 <label for="star-4" title="Оценка «4»"></label>
-                <input type="radio" id="star-3" name="rating" value="3" onclick="setMark(this);">
+                <input class="star-rating" type="radio" id="star-3" name="rating" value="3" onclick="setMark(this);">
                 <label for="star-3" title="Оценка «3»"></label>
-                <input type="radio" id="star-2" name="rating" value="2" onclick="setMark(this);">
+                <input class="star-rating" type="radio" id="star-2" name="rating" value="2" onclick="setMark(this);">
                 <label for="star-2" title="Оценка «2»"></label>
-                <input type="radio" id="star-1" name="rating" value="1" onclick="setMark(this);">
+                <input class="star-rating" type="radio" id="star-1" name="rating" value="1" onclick="setMark(this);">
                 <label for="star-1" title="Оценка «1»"></label>
             </div>
         </div>
@@ -32,18 +32,11 @@ const item =
         <figcaption class="ensuing_consequences__text">Алкоголь вредит вашему здоровью!</figcaption>
     </figure>
     <section class="comments_block">
-        <form class="comment_form">
+        <form class="comment_form" onsubmit="leaveComment();return false;">
             <textarea class="comment_form-text_textarea" placeholder="Enter your comment"></textarea>
-            <button class="comment_create-button">Create</button>
+            <button type="submit" class="comment_create-button">Create</button>
         </form>
         <ul class="comments_list">
-            <li class="comments_item">
-                <div class="comment_info">
-                    <p>aaa@mail.com</p>
-                    <time>2021-03-08</time>
-                </div>
-                <p class="comment_content">dgdfgdfg</p>
-            </li>
         </ul>
     </section>
     `

@@ -36,11 +36,7 @@ function addIngredient() {
 }
 
 async function submitCreate() {
-    let user = authObject.user;
-    let username;
-    if (user != null) {
-        username = user.email;
-    }
+    let user = localStorage.getItem("user");
     let name = document.getElementById('name_field').value;
     let description = document.getElementById('description_field').value;
     let ingredientsList = {};
@@ -50,7 +46,7 @@ async function submitCreate() {
         let name = ingredientsSelects[i].options[ingredientsSelects[i].selectedIndex].value;
         ingredientsList[name] = +ingredientsValues[i].value;
     }
-    let res = await cocktailStorage.addCocktail(new Cocktail(name, username, description, ingredientsList));
+    let res = await cocktailStorage.addCocktail(new Cocktail(name, user, description, ingredientsList));
     if (res) {
         onNextPage('/Itirod_project/project/catalog')
     }

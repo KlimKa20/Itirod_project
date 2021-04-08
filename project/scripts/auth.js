@@ -1,26 +1,25 @@
 class auth {
-    constructor() {
-        this.user = null
-    }
 
     isAuth() {
-        firebase.auth().onAuthStateChanged(function (user) {
+        firebase.auth().onAuthStateChanged(function (userCredential) {
             let log = document.getElementById("auth");
             let create = document.getElementById("create");
-            if (user) {
+            if (userCredential) {
+                localStorage.setItem("user", userCredential.email)
                 log.textContent = "LogOut";
                 log.onclick = function () {
                     authObject.logOut()
                 }
-                create.onclick = function (){
+                create.onclick = function () {
                     onNextPage('/Itirod_project/project/create')
                 }
             } else {
+                localStorage.setItem("user", "null")
                 log.textContent = "LogIn";
                 log.onclick = function () {
                     onNextPage('/Itirod_project/project/login')
                 }
-                create.onclick = function (){
+                create.onclick = function () {
                     onNextPage('/Itirod_project/project/login')
                 }
             }
@@ -31,11 +30,10 @@ class auth {
         let email = document.getElementById('login').value;
         let password = document.getElementById('password').value;
         await firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                this.user = userCredential.user;
+            .then(() => {
                 onNextPage("/Itirod_project/project/catalog")
             })
-            .catch((error) => {
+            .catch(() => {
                 alert("Неправильный логин или пароль")
             });
     }
@@ -53,7 +51,7 @@ class auth {
             .then(function () {
                 onNextPage("/Itirod_project/project/catalog")
             })
-            .catch(function (error) {
+            .catch(function () {
                 alert("Логин был испоьзован ранее")
             })
     }

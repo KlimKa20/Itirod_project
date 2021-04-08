@@ -47,8 +47,16 @@ async function fillCatalog() {
     }
     let filter = getURLParam('filter');
     if (filter === "top") {
-        catalog.sort((a, b) => getMarks(b) - getMarks(a));
-        catalog = catalog.slice(0, 1);
+        let temp = []
+        for (const a of catalog) {
+            temp.push({obj: a, value: await getMarks(a)});
+        }
+        temp.sort((a, b) => b.value - a.value)
+        catalog = []
+        for (const a of temp) {
+            catalog.push(a.obj);
+        }
+        catalog = catalog.slice(0, 5);
     }
     let sort = getURLParam('sort');
     if (sort != null) {
@@ -57,7 +65,15 @@ async function fillCatalog() {
                 catalog.sort((a, b) => ('' + a.item.name.toLowerCase()).localeCompare(b.item.name.toLowerCase()));
                 break;
             case 'rating':
-                catalog.sort((a, b) => getMarks(b) - getMarks(a));
+                let temp = []
+                for (const a of catalog) {
+                    temp.push({obj: a, value: await getMarks(a)});
+                }
+                temp.sort((a, b) => b.value - a.value)
+                catalog = []
+                for (const a of temp) {
+                    catalog.push(a.obj);
+                }
                 break;
             case 'date':
                 catalog.sort((a, b) => b.item.createDate - a.item.createDate);
@@ -74,7 +90,7 @@ async function fillCatalog() {
         cocktailContainer.appendChild(imageContainer);
         let ratingContainer = document.createElement("div");
         ratingContainer.classList.add("rating-result");
-        let marks = getMarks(item)
+        let marks = await getMarks(item)
         for (let i = 0; i < 5; i++) {
             let star = document.createElement("span");
             if (i + 0.5 <= marks) {
@@ -84,7 +100,9 @@ async function fillCatalog() {
         }
         cocktailContainer.appendChild(ratingContainer);
         cocktail.appendChild(cocktailContainer);
-        cocktail.onclick = function (){onNextPage(`/Itirod_project/project/item?id=${item.id}`)}
+        cocktail.onclick = function () {
+            onNextPage(`/Itirod_project/project/item?id=${item.id}`)
+        }
         grid.appendChild(cocktail);
     }
 }

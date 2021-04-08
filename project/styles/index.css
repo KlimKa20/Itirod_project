@@ -201,23 +201,3 @@
         bottom: 32%;
     }
 }
-
-@media (max-width: 805px) {
-    /*.grid__img {*/
-    /*    width: 50%;*/
-    /*}*/
-    /*.cocktail-ingredient {*/
-    /*    left: 30%;*/
-    /*    bottom: 34%;*/
-    /*}*/
-}
-
-@media (max-width: 545px) {
-    /*.grid__img {*/
-    /*    width: 40%;*/
-    /*}*/
-
-}
-
-
-
