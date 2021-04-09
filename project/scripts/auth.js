@@ -11,16 +11,16 @@ class auth {
                     authObject.logOut()
                 }
                 create.onclick = function () {
-                    onNextPage('/Itirod_project/project/create')
+                    onNextPage('/create')
                 }
             } else {
                 localStorage.setItem("user", "null")
                 log.textContent = "LogIn";
                 log.onclick = function () {
-                    onNextPage('/Itirod_project/project/login')
+                    onNextPage('/login')
                 }
                 create.onclick = function () {
-                    onNextPage('/Itirod_project/project/login')
+                    onNextPage('/login')
                 }
             }
         });
@@ -31,7 +31,7 @@ class auth {
         let password = document.getElementById('password').value;
         await firebase.auth().signInWithEmailAndPassword(email, password)
             .then(() => {
-                onNextPage("/Itirod_project/project/catalog")
+                onNextPage("/catalog")
             })
             .catch(() => {
                 alert("Неправильный логин или пароль")
@@ -42,7 +42,7 @@ class auth {
         const provider = new firebase.auth.GoogleAuthProvider();
         await firebase.auth().signInWithPopup(provider)
             .then(() => {
-                onNextPage("/Itirod_project/project/catalog")
+                onNextPage("/catalog")
             }).catch(() => {
                 alert("Невозможно авторизоваться с помощью гугла")
             });
@@ -52,7 +52,7 @@ class auth {
         const provider = new firebase.auth.FacebookAuthProvider();
         await firebase.auth().signInWithPopup(provider)
             .then(() => {
-                onNextPage("/Itirod_project/project/catalog")
+                onNextPage("/catalog")
             }).catch(() => {
                 alert("Невозможно авторизоваться с помощью фейсбука")
             });
@@ -63,13 +63,17 @@ class auth {
         let password = document.getElementById('password').value;
         let repeatPassword = document.getElementById('repeat-password').value;
 
-        if (repeatPassword !== password) {
+        if (password.length < 4){
+            alert("Пароль недопустимой длины")
+            return
+        }
+        else if (repeatPassword !== password) {
             alert("Пароли отличаются")
             return
         }
         await firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(function () {
-                onNextPage("/Itirod_project/project/catalog")
+                onNextPage("/catalog")
             })
             .catch(function () {
                 alert("Логин был испоьзован ранее")
@@ -78,7 +82,7 @@ class auth {
 
     async logOut() {
         await firebase.auth().signOut().then(function () {
-            onNextPage("/Itirod_project/project/catalog")
+            onNextPage("/catalog")
         });
     }
 }

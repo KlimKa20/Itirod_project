@@ -7,7 +7,7 @@ function getURLParam(param) {
 
 function setFilter(filter) {
     let sort = getURLParam('sort');
-    let url = `/Itirod_project/project/catalog?filter=${filter}`;
+    let url = `/catalog?filter=${filter}`;
     if (sort != null) {
         url += `&sort=${sort}`;
     }
@@ -16,7 +16,7 @@ function setFilter(filter) {
 
 function setSort(sort) {
     let filter = getURLParam('filter');
-    let url = `/Itirod_project/project/catalog?sort=${sort}`;
+    let url = `/catalog?sort=${sort}`;
     if (filter != null) {
         url += `&filter=${filter}`;
     }
@@ -26,11 +26,11 @@ function setSort(sort) {
 async function searchBar() {
     let field = document.querySelector(".search__input");
     let text = field.value.trim().toLowerCase();
-    onNextPage(`/Itirod_project/project/catalog?searchBar=${text}`);
+    onNextPage(`/catalog?searchBar=${text}`);
 }
 
-async function getMarks(item) {
-    let marks = await cocktailStorage.getAllMarks(item.id);
+async function getMarks(id) {
+    let marks = await cocktailStorage.getAllMarks(id);
     if (marks.length === 0) {
         return 0;
     }

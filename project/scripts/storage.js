@@ -12,7 +12,11 @@ const firebaseConfig = {
 
 class Storage {
     constructor() {
-        firebase.initializeApp(firebaseConfig);
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        } else {
+            firebase.app(); // if already initialized, use that one
+        }
         this.database = firebase.firestore();
     }
 
@@ -89,9 +93,13 @@ class Storage {
             );
     }
 
-    setMark(cocktails, user, value) {
+    async setMark(cocktails, user, value) {
         this.database.collection("cocktails").doc(cocktails).collection("stars").doc(user).set({
             value: +value
+        })
+        let marks = await getMarks(cocktails)
+        this.database.collection("cocktails").doc(cocktails).update({
+            marks: +marks
         })
     }
 

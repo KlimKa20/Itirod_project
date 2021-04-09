@@ -1,23 +1,24 @@
 // for local_site
+// const paths = {
+//     '/Itirod_project/project/index.html': [catalog, "scripts/index.js"],
+//     '/Itirod_project/project/catalog': [catalog, "scripts/index.js"],
+//     '/Itirod_project/project/create': [create, "scripts/create.js"],
+//     '/Itirod_project/project/item': [item, "scripts/item.js"],
+//     '/Itirod_project/project/login': [log, null],
+//     '/Itirod_project/project/reg': [reg, null],
+//     '/Itirod_project/project/notFound': [notFound, null]
+// };
+
 const paths = {
-    '/Itirod_project/project/index.html': [catalog, "scripts/index.js"],
-    '/Itirod_project/project/catalog': [catalog, "scripts/index.js"],
-    '/Itirod_project/project/create': [create, "scripts/create.js"],
-    '/Itirod_project/project/item': [item, "scripts/item.js"],
-    '/Itirod_project/project/login': [log, null],
-    '/Itirod_project/project/reg': [reg, null],
-    '/Itirod_project/project/notFound': [notFound, null]
+    '/': [catalog, "scripts/index.js"],
+    '/catalog': [catalog, "scripts/index.js"],
+    '/create': [create, "scripts/create.js"],
+    '/item': [item, "scripts/item.js"],
+    '/login': [log, null],
+    '/reg': [reg, null],
+    '/notFound': [notFound, null]
 };
 
-// const paths = {
-//     '/' : [catalog,"scripts/index.js"],
-//     '/catalog' : [catalog,"scripts/index.js"],
-//     '/create' : [create,"scripts/create.js"],
-//     '/item' : [item,"scripts/item.js"],
-//     '/login' : [log,null],
-//     '/register' : [reg,null],
-//     '/notFound': [notFound, null]
-// };
 function getPath(url) {
     let index = url.indexOf('?');
     if (index !== -1) {
@@ -30,7 +31,7 @@ async function onchangePage(url) {
     let path = getPath(url)
     let scriptContent = paths[path];
     if (scriptContent === undefined) {
-        onNextPage('/Itirod_project/project/notFound')
+        onNextPage('/notFound')
         return
     }
     content.innerHTML = scriptContent[0]
@@ -45,7 +46,7 @@ async function onchangePage(url) {
 window.onpopstate = () => {
     onchangePage(window.location.pathname);
 }
-window.onload = function() {
+window.onload = function () {
     authObject.isAuth();
 };
 const content = document.getElementById("content")

@@ -1,11 +1,10 @@
-const maxIngredients = 5
-
 function isright(obj) {
     if (obj.value > 100) obj.value = 100;
     if (obj.value < 1) obj.value = 1;
 }
 
 function addIngredient() {
+    const maxIngredients = 5
     let ingredientsList = document.querySelector('.cocktail-create__list');
     let ingredientItem = document.createElement('li');
     let fields = document.getElementsByClassName('cocktail-create__li')
@@ -37,6 +36,7 @@ function addIngredient() {
 }
 
 function removeIngredient(event) {
+    const maxIngredients = 5
     let items = document.getElementsByClassName('cocktail-create__li');
     if (items.length === maxIngredients) {
         let addButton = document.querySelector('.btn_add');
@@ -56,16 +56,15 @@ async function submitCreate() {
     let ingredientsValues = document.getElementsByClassName('cocktail-create__value');
     for (let i = 0; i < ingredientsSelects.length; i++) {
         let name = ingredientsSelects[i].options[ingredientsSelects[i].selectedIndex].value;
-        if (ingredientsList[name] === undefined){
+        if (ingredientsList[name] === undefined) {
             ingredientsList[name] = +ingredientsValues[i].value;
-        }
-        else {
+        } else {
             ingredientsList[name] += +ingredientsValues[i].value;
         }
     }
     let res = await cocktailStorage.addCocktail(new Cocktail(name, user, description, ingredientsList));
     if (res) {
-        onNextPage('/Itirod_project/project/catalog')
+        onNextPage('/catalog')
     }
 }
 
@@ -81,6 +80,7 @@ function buildImg() {
         amount += +item.value;
     }
     if (amount === 0) {
+        alert("Нет ингредиентов")
         return
     }
     let currentAmount = amount

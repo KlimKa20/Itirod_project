@@ -56,7 +56,7 @@ function createListIngredients(nameIngredients) {
     return amount
 }
 
-function buildImg(amount,nameIngredients) {
+function buildImg(amount, nameIngredients) {
     let currentAmount = amount
     let container = document.querySelector(".cocktail__name-block");
     for (let ingredient in nameIngredients) {
@@ -73,7 +73,7 @@ async function cocktailDetail() {
     let id = getURLParam('id');
     let cocktail = await cocktailStorage.getCocktailById(id);
     if (cocktail === undefined) {
-        onNextPage('/Itirod_project/project/notFound')
+        onNextPage('/notFound')
         return;
     }
     let mark;
@@ -87,11 +87,11 @@ async function cocktailDetail() {
     let name = document.querySelector(".cocktail__name");
     name.textContent = cocktail.name;
     let amount = createListIngredients(cocktail.ingredients);
-    buildImg(amount,cocktail.ingredients)
+    buildImg(amount, cocktail.ingredients)
     let creator = document.getElementById("creator");
     creator.textContent = cocktail.addedBy;
     let listComments = document.querySelector(".comments_list")
-    for (let comment of await cocktailStorage.getAllComments(id)) {
+    for (let comment of await cocktailStorage.getAllComments(id).reverse()) {
         let item = document.createElement('comment-item');
         item.user = comment.user
         item.date = comment.date
