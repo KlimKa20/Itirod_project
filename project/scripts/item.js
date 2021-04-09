@@ -27,7 +27,7 @@ async function leaveComment() {
     item.user = user
     item.date = time
     item.content = text
-    listComments.appendChild(item);
+    listComments.prepend(item);
 }
 
 
@@ -91,7 +91,7 @@ async function cocktailDetail() {
     let creator = document.getElementById("creator");
     creator.textContent = cocktail.addedBy;
     let listComments = document.querySelector(".comments_list")
-    for (let comment of await cocktailStorage.getAllComments(id).reverse()) {
+    for (let comment of await cocktailStorage.getAllComments(id)) {
         let item = document.createElement('comment-item');
         item.user = comment.user
         item.date = comment.date

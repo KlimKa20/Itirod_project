@@ -80,7 +80,6 @@ function buildImg() {
         amount += +item.value;
     }
     if (amount === 0) {
-        alert("Нет ингредиентов")
         return
     }
     let currentAmount = amount
