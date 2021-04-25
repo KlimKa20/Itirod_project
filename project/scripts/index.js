@@ -5,9 +5,7 @@ async function fillGrid(catalog) {
         cocktail.ingredients = item.item.ingredients;
         cocktail.marks = item.item.marks;
         cocktail.name = item.item.name;
-        cocktail.onclick = function () {
-            onNextPage(`/item?id=${item.id}`)
-        }
+        cocktail.href = `/item?id=${item.id}`
         grid.appendChild(cocktail);
     }
 }

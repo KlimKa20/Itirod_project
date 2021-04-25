@@ -9,7 +9,7 @@ const reg =
                 <h2>
                     <span>Join</span>
                     |
-                    <a onclick="onNextPage('/login')">LogIn</a>
+                    <a href="/login" onclick="onNextPage('/login');return false;">LogIn</a>
                 </h2>
             </div>
             <form class="identification__form" onsubmit="authObject.submitSignUp();return false;">
@@ -24,7 +24,7 @@ const reg =
             </div>
             <div class="identification__text_footer">
                 <span>Already have a profile?</span>
-                <a onclick="onNextPage('/login')">LogIn</a>
+                <a href="/login" onclick="onNextPage('/login');return false;">LogIn</a>
             </div>
         </div>
     </div>

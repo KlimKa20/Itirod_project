@@ -2,7 +2,7 @@ class CocktailItem extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-        <a>
+        <a href="${this.href}">
             <div class="grid__cocktail-container">
                 <figure class="grid__cocktail-img">
                     <img class="grid__img" src="image/empty-cup.png" alt="image_item">

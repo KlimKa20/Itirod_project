@@ -8,19 +8,25 @@ class auth {
                 localStorage.setItem("user", userCredential.email)
                 log.textContent = "LogOut";
                 log.onclick = function () {
-                    authObject.logOut()
+                    authObject.logOut();
+                    return false;
                 }
+                log.href = "/logout"
                 create.onclick = function () {
                     onNextPage('/create')
+                    return false;
                 }
             } else {
                 localStorage.setItem("user", "null")
                 log.textContent = "LogIn";
+                log.href = "/login"
                 log.onclick = function () {
                     onNextPage('/login')
+                    return false;
                 }
                 create.onclick = function () {
                     onNextPage('/login')
+                    return false;
                 }
             }
         });

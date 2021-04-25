@@ -32,9 +32,9 @@
         <button class="search__button" type="submit">&#128269</button>
     </form>
     <nav>
-        <a class="menu__item" onclick="onNextPage('/catalog')">Catalog</a>
-        <a id="create" class="menu__item" onclick="onNextPage('/create')">Create</a>
-        <a id="auth" class="menu__item" onclick="onNextPage('/login')">Log In</a>
+        <a class="menu__item" href="/catalog" onclick="onNextPage('/catalog');return false;">Catalog</a>
+        <a id="create" href="/create" class="menu__item" onclick="onNextPage('/create');return false;">Create</a>
+        <a id="auth" href="/login" class="menu__item" onclick="onNextPage('/login');return false;">Log In</a>
     </nav>
 </header>
 <main id="content">
