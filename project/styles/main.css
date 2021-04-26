@@ -51,7 +51,7 @@ nav {
 }
 
 header {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     width: 100%;
     background-color: var(--background-header-color);
@@ -63,6 +63,12 @@ header {
     justify-content: space-between;
 }
 
+.not_found {
+    text-align: center;
+    padding: 200px;
+    height: calc(100vh - 100px);
+    color: var(--font-field);
+}
 
 .search__form {
     position: relative;
