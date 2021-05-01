@@ -1,0 +1,23 @@
+{
+  "name": "itirod_project",
+  "version": "1.0.0",
+  "description": "cocktail cite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KlimKa20/Itirod_project.git"
+  },
+  "keywords": [
+    "promise",
+    "async"
+  ],
+  "author": "KlimKa",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/KlimKa20/Itirod_project/issues"
+  },
+  "homepage": "https://github.com/KlimKa20/Itirod_project#readme"
+}
